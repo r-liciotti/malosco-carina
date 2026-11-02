@@ -1024,6 +1024,11 @@ li + li { margin-top: 0.25em; }
 li > ul, li > ol { margin-top: 0.3em; }
 strong { font-weight: 700; }
 a { color: var(--lake); text-underline-offset: 2px; overflow-wrap: anywhere; }
+a.maps { color: inherit; text-decoration: underline dotted var(--lake); text-decoration-thickness: 2px; overflow-wrap: normal; }
+a.maps::after { content: ""; display: inline-block; width: .7em; height: .85em; margin-left: .18em; vertical-align: -.05em; background: var(--lake);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 16'%3E%3Cpath d='M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.5A2.5 2.5 0 1 1 6 3.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 16'%3E%3Cpath d='M6 0a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8.5A2.5 2.5 0 1 1 6 3.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") no-repeat center / contain; }
+a.maps:hover { color: var(--lake); }
 hr { border: 0; border-top: 1px dashed var(--line); margin: 2em 0; }
 blockquote {
   margin: 1.2em 0; padding: 10px 14px; border-left: 4px solid var(--larch);
@@ -1181,15 +1186,15 @@ footer {
 </tr>
 <tr>
 <td><strong>Mete principali</strong></td>
-<td>Lago di Tovel · Santuario di San Romedio · Lago Smeraldo</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Tovel" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Tovel</a> · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Santuario di San Romedio</a> · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a></td>
 </tr>
 <tr>
 <td><strong>In più</strong></td>
-<td>Canyon Rio Sass, Castel Valer, Castel Thun, belvedere della Mendola</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a>, <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a>, <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a>, belvedere della Mendola</td>
 </tr>
 <tr>
 <td><strong>Cena tipica di venerdì</strong></td>
-<td><strong>Nerina</strong>, Malgolo di Romeno: segnalato dalla guida Michelin per il buon rapporto qualità-prezzo, a 10 minuti</td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a></strong>, Malgolo di Romeno: segnalato dalla guida Michelin per il buon rapporto qualità-prezzo, a 10 minuti</td>
 </tr>
 <tr>
 <td><strong>Luce</strong></td>
@@ -1211,25 +1216,25 @@ footer {
 <tr>
 <td><strong>Gio 5</strong></td>
 <td>Viaggio</td>
-<td><strong>Lago Smeraldo</strong> + tramonto alla Mendola</td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a></strong> + tramonto alla Mendola</td>
 <td>Malosco</td>
 </tr>
 <tr>
 <td><strong>Ven 6</strong></td>
-<td><strong>Lago di Tovel</strong></td>
-<td>Cles / Lago di Santa Giustina (facoltativo)</td>
-<td><strong>Cena tipica da Nerina</strong></td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Tovel" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Tovel</a></strong></td>
+<td>Cles / <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Santa+Giustina%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Santa Giustina</a> (facoltativo)</td>
+<td><strong>Cena tipica da <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a></strong></td>
 </tr>
 <tr>
 <td><strong>Sab 7</strong></td>
-<td><strong>San Romedio</strong> a piedi da Sanzeno</td>
-<td>Castel Valer (visita guidata)</td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a></strong> a piedi da Sanzeno</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a> (visita guidata)</td>
 <td>Libera</td>
 </tr>
 <tr>
 <td><strong>Dom 8</strong></td>
-<td>Canyon Rio Sass (visita guidata)</td>
-<td>Castel Thun, poi rientro</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a> (visita guidata)</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a>, poi rientro</td>
 <td>Casa</td>
 </tr>
 </tbody>
@@ -1237,16 +1242,16 @@ footer {
 <p>Perché questo ordine:</p>
 <ul>
 <li><strong>Tovel di venerdì:</strong> è il giorno con il meteo confermato bello, è un giorno feriale e senza caccia, e la strada potrebbe chiudere da un giorno all'altro con la prima neve.</li>
-<li><strong>Lago Smeraldo già giovedì:</strong> è a 10 minuti da Malosco, quindi resta tempo per le tre mete richieste.</li>
-<li><strong>Castel Valer sabato e Castel Thun domenica:</strong> entrambi a novembre aprono solo nel weekend.</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a> già giovedì:</strong> è a 10 minuti da Malosco, quindi resta tempo per le tre mete richieste.</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a> sabato e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a> domenica:</strong> entrambi a novembre aprono solo nel weekend.</li>
 </ul>
 <h3>⚠️ Prima di partire: telefonate da fare il 4-5 novembre</h3>
 <ol>
-<li><strong>APT Val di Non, 0463 830133:</strong> chiedere se la strada SP14 per Tovel è aperta e come funziona il parcheggio, se il Museo Retico è aperto e se c'è una festa di San Martino a Castel Thun. In più prenotare <strong>Castel Valer</strong> (sabato alle 15:00).</li>
-<li><strong>Cooperativa Smeraldo, 0463 850000</strong> (smeraldo@fondo.it): prenotare il <strong>Canyon Rio Sass</strong> per domenica alle 10:00. La prenotazione è obbligatoria e il canyon chiude il 15 novembre.</li>
-<li><strong>Santuario di San Romedio, 0463 536198:</strong> chiedere se il "sentiero nella roccia" da Sanzeno è aperto o chiuso per ghiaccio.</li>
-<li><strong>Nerina, 0463 510111:</strong> prenotare la cena di venerdì alle 19:30. Accettano prenotazioni solo per telefono e l'ultima comanda è alle 20:30.</li>
-<li><strong>All'hotel:</strong> chiedere se rilascia la <strong>Trentino Guest Card</strong>. Con la card Castel Thun e il Museo Retico sono gratuiti e il Rio Sass ha il 20% di sconto.</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=APT+Val+di+Non%2C+via+Roma+21%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">APT Val di Non</a>, 0463 830133:</strong> chiedere se la strada SP14 per Tovel è aperta e come funziona il parcheggio, se il <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a> è aperto e se c'è una festa di San Martino a <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a>. In più prenotare <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a></strong> (sabato alle 15:00).</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Cooperativa+Smeraldo%2C+piazza+San+Giovanni+9%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Cooperativa Smeraldo</a>, 0463 850000</strong> (smeraldo@fondo.it): prenotare il <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a></strong> per domenica alle 10:00. La prenotazione è obbligatoria e il canyon chiude il 15 novembre.</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Santuario di San Romedio</a>, 0463 536198:</strong> chiedere se il "sentiero nella roccia" da Sanzeno è aperto o chiuso per ghiaccio.</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a>, 0463 510111:</strong> prenotare la cena di venerdì alle 19:30. Accettano prenotazioni solo per telefono e l'ultima comanda è alle 20:30.</li>
+<li><strong>All'hotel:</strong> chiedere se rilascia la <strong>Trentino Guest Card</strong>. Con la card <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a> e il <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a> sono gratuiti e il Rio Sass ha il 20% di sconto.</li>
 </ol>
 <h3>File</h3>
 <ul>
@@ -1263,7 +1268,7 @@ footer {
 <ul>
 <li>Se la strada per Tovel è aperta dal 5 all'8 novembre (probabile, non certo).</li>
 <li>Il tratto del giro del lago di Tovel chiuso per lavori (avviso del Parco senza date).</li>
-<li>Se il sentiero nella roccia di San Romedio è aperto.</li>
+<li>Se il sentiero nella roccia di <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a> è aperto.</li>
 <li>Le ferie autunnali dei ristoranti: si risolve con le telefonate di prenotazione.</li>
 <li>Il meteo di sabato e domenica.</li>
 <li>Le distanze e i tempi locali sono stime (±10%).</li>
@@ -1296,10 +1301,10 @@ footer {
 <hr>
 <h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Giovedì 5 novembre – arrivo e Lago Smeraldo</h3>
 <p><strong>Mattina:</strong> viaggio. Pranzo a Malosco o a Fondo.</p>
-<h4>14:30-15:45 · Lago Smeraldo e Burrone di Fondo — <span class="chip chip-rec">Consigliato (una delle tre mete richieste)</span></h4>
+<h4>14:30-15:45 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo e Burrone di Fondo</a> — <span class="chip chip-rec">Consigliato (una delle tre mete richieste)</span></h4>
 <figure class="photo"><img src="images/lago-smeraldo.jpg" alt="Lago Smeraldo, Fondo" width="1280" height="853" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Fondo_Lago_Smeraldo.jpg" target="_blank" rel="noopener">ManfredK</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Lago+Smeraldo+Fondo" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Lago+Smeraldo+Fondo" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
-<li><strong>Perché oggi:</strong> è a circa 5 km e 10 minuti da Malosco. È una passeggiata facile, adatta al giorno di arrivo, e così venerdì e sabato restano liberi per Tovel e San Romedio.</li>
+<li><strong>Perché oggi:</strong> è a circa 5 km e 10 minuti da Malosco. È una passeggiata facile, adatta al giorno di arrivo, e così venerdì e sabato restano liberi per Tovel e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a>.</li>
 <li><strong>Cosa fare:</strong> il giro del lago richiede circa 30 minuti ed è pianeggiante. Il lago è un piccolo bacino artificiale del 1965 sul Rio Sass, a circa 1.000 m, in una conca di bosco. Si può aggiungere il <strong>sentiero "Al Burrone"</strong> dal centro di Fondo: circa 1 km, poco più di mezz'ora, con passerelle e scale, passando dal vecchio mulino e dal ponte romano. Per vedere il lago dall'alto c'è il <strong>Sentiero dell'Erica</strong>, un anello nel bosco.</li>
 <li><strong>Parcheggio:</strong> gratuito, al lago.</li>
 <li><strong>Attenzione:</strong><ul>
@@ -1309,18 +1314,18 @@ footer {
 </ul>
 </li>
 </ul>
-<h4>16:00-17:10 · Tramonto al Passo della Mendola / belvedere del Penegal — <span class="chip chip-rec">Consigliato</span></h4>
+<h4>16:00-17:10 · Tramonto al <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Passo+della+Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Passo della Mendola</a> / <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Belvedere+Penegal%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">belvedere del Penegal</a> — <span class="chip chip-rec">Consigliato</span></h4>
 <figure class="photo"><img src="images/mendola.jpg" alt="Passo della Mendola" width="1280" height="720" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Mendelpass_2023.jpg" target="_blank" rel="noopener">Daniel Reust</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Passo+della+Mendola+Penegal" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Passo+della+Mendola+Penegal" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
 <li><strong>Perché:</strong> sono circa 8 km e 15 minuti. Dal belvedere (1.737 m) si vedono la Val d'Adige, Bolzano e le Dolomiti a est. Al tramonto le montagne diventano rosa (si chiama <em>enrosadira</em>).</li>
 <li><strong>Costo:</strong> gratuito.</li>
-<li><strong>Non verificato:</strong> se la strada del Penegal è aperta a novembre. Se è chiusa, fermatevi al Passo della Mendola oppure fate una breve passeggiata ai prati di larici delle <strong>Regole di Malosco</strong> (circa 1.320 m).</li>
+<li><strong>Non verificato:</strong> se la strada del <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Belvedere+Penegal%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Penegal</a> è aperta a novembre. Se è chiusa, fermatevi al <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Passo+della+Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Passo della Mendola</a> oppure fate una breve passeggiata ai prati di larici delle <strong>Regole di Malosco</strong> (circa 1.320 m).</li>
 </ul>
-<p><strong>Sera:</strong> a Malosco. Ricordate di confermare la prenotazione da Nerina per venerdì.</p>
+<p><strong>Sera:</strong> a Malosco. Ricordate di confermare la prenotazione da <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a> per venerdì.</p>
 <hr>
 <h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Venerdì 6 novembre – Lago di Tovel</h3>
 <p>Il meteo previsto è sole e tempo stabile. È anche giorno di <strong>silenzio venatorio</strong>, cioè non si caccia: il giorno migliore per Tovel.</p>
-<h4>9:00 partenza → 10:15 circa arrivo · Lago di Tovel — <span class="chip chip-must">Da non perdere</span></h4>
+<h4>9:00 partenza → 10:15 circa arrivo · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Tovel" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Tovel</a> — <span class="chip chip-must">Da non perdere</span></h4>
 <figure class="photo"><img src="images/tovel.jpg" alt="Lago di Tovel" width="1280" height="707" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Lago_di_Tovel_02.jpg" target="_blank" rel="noopener">Llorenzi</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Lago+di+Tovel" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Lago+di+Tovel" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
 <li><strong>Perché:</strong> è il lago simbolo della valle, l'ex "Lago Rosso" del Parco Adamello Brenta, con il gruppo del Brenta alle spalle. A novembre non c'è folla e i larici possono essere ancora dorati.</li>
@@ -1336,54 +1341,54 @@ footer {
 </ul>
 <p><strong>Piano B, se la strada è chiusa:</strong> a piedi dal parcheggio Capriolo ci vogliono 2-2 ore e mezza solo per salire, troppo. In quel caso:</p>
 <ul>
-<li>venerdì mattina andate al <strong>Canyon Rio Sass</strong> alle 10:00 (prenotatelo per venerdì invece che per domenica) e il pomeriggio a <strong>San Romedio</strong> in auto;</li>
-<li>sabato tenete il programma (sentiero nella roccia e Castel Valer) oppure fate le <strong>Regole di Malosco e il Penegal</strong> a piedi.</li>
+<li>venerdì mattina andate al <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a></strong> alle 10:00 (prenotatelo per venerdì invece che per domenica) e il pomeriggio a <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a></strong> in auto;</li>
+<li>sabato tenete il programma (sentiero nella roccia e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a>) oppure fate le <strong>Regole di Malosco e il <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Belvedere+Penegal%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Penegal</a></strong> a piedi.</li>
 </ul>
-<h4>14:00-16:30 · Cles e Lago di Santa Giustina — <span class="chip chip-opt">Facoltativo</span></h4>
+<h4>14:00-16:30 · Cles e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Santa+Giustina%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Santa Giustina</a> — <span class="chip chip-opt">Facoltativo</span></h4>
 <figure class="photo"><img src="images/santa-giustina.jpg" alt="Lago di Santa Giustina" width="1280" height="960" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Lago_di_Santa_Giustina_3.jpg" target="_blank" rel="noopener">Syrio</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Lago+di+Santa+Giustina" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Lago+di+Santa+Giustina" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
-<li><strong>Perché:</strong> è sulla strada del ritorno. Si può prendere un caffè nel centro di Cles e vedere la diga di Santa Giustina tra i meleti. Dura 1-2 ore ed è gratuito.</li>
+<li><strong>Perché:</strong> è sulla strada del ritorno. Si può prendere un caffè nel centro di Cles e vedere la diga di <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Santa+Giustina%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Santa Giustina</a> tra i meleti. Dura 1-2 ore ed è gratuito.</li>
 <li><strong>Alternativa più comoda:</strong> rientrate a Malosco a riposare prima di cena.</li>
-<li><strong>Altra alternativa:</strong> <strong>MondoMelinda</strong> a Segno: negozio aperto 9-13 e 15-19. Per novembre i tour delle celle sotterranee non sono confermati: chiedete all'APT.</li>
+<li><strong>Altra alternativa:</strong> <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Mondo+Melinda%2C+via+della+Cooperazione+21%2C+Segno" target="_blank" rel="noopener" title="Apri in Google Maps">MondoMelinda</a></strong> a Segno: negozio aperto 9-13 e 15-19. Per novembre i tour delle celle sotterranee non sono confermati: chiedete all'APT.</li>
 </ul>
-<h4>19:30 · Cena tipica da <strong>Nerina</strong>, Malgolo di Romeno</h4>
+<h4>19:30 · Cena tipica da <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a></strong>, Malgolo di Romeno</h4>
 <p>Circa 10 minuti da Malosco. Prenotazione per telefono obbligatoria: 0463 510111. I dettagli e le alternative sono in <a href="#cucina">food_guide.md</a>.</p>
 <hr>
 <h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Sabato 7 novembre – San Romedio e un castello</h3>
-<h4>9:15-13:00 · Santuario di San Romedio a piedi da Sanzeno — <span class="chip chip-must">Da non perdere</span></h4>
+<h4>9:15-13:00 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Santuario di San Romedio</a> a piedi da Sanzeno — <span class="chip chip-must">Da non perdere</span></h4>
 <figure class="photo"><img src="images/san-romedio.jpg" alt="Santuario di San Romedio" width="960" height="1280" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Santuario_di_San_Romedio_-_panoramio.jpg" target="_blank" rel="noopener">Rolandob</a>, <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Santuario+di+San+Romedio" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Santuario+di+San+Romedio" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
 <li><strong>Perché:</strong> è il santuario eremitico più scenografico del Trentino. Cinque chiese costruite una sopra l'altra su uno sperone di roccia, collegate da <strong>131 gradini</strong>, con il recinto dell'orso legato alla leggenda di Romedio.</li>
-<li><strong>Strada:</strong> Malosco → Sanzeno sono circa 17 km e 25 minuti. Parcheggiate al <strong>Museo Retico</strong>, in via Rezia 87 (circa 7,50 € al giorno secondo recensioni), oppure vicino al campo sportivo (pare gratuito).</li>
+<li><strong>Strada:</strong> Malosco → Sanzeno sono circa 17 km e 25 minuti. Parcheggiate al <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a></strong>, in via Rezia 87 (circa 7,50 € al giorno secondo recensioni), oppure vicino al campo sportivo (pare gratuito).</li>
 <li><strong>Il "sentiero nella roccia":</strong> segue un'antica canaletta per l'irrigazione scavata nella parete della gola, con corrimano di legno e alcuni tratti con il soffitto basso. Ci vuole circa 1 ora per tratto, con poca salita: in tutto circa 2 ore e mezza, visita compresa.</li>
 <li><strong>Santuario:</strong> aperto tutti i giorni dalle 9:00 alle 17:30, ingresso gratuito con offerta libera. I cani non sono ammessi.</li>
 <li><strong>Orso:</strong> a novembre è probabile che stia nella tana. Non contateci.</li>
 <li><strong>Attenzione:</strong> <strong>in inverno il sentiero viene chiuso se c'è ghiaccio</strong>. Chiedete al santuario il giorno prima.</li>
 <li><strong>Piano B:</strong> salite in auto da Sanzeno per la strada stretta (circa 3 km) fino al parcheggio ai piedi del santuario, poi pochi minuti a piedi. In alternativa: a piedi da Coredo, passando dai laghetti di Coredo e Tavon (circa 45 minuti).</li>
 </ul>
-<p><strong>Pranzo:</strong> a Sanzeno. <strong>Osteria Casa de Gentili</strong> (0463 424136) apre dal venerdì alla domenica: è la più apprezzata della zona.</p>
-<h4>15:00 · Castel Valer, Tassullo – visita guidata — <span class="chip chip-rec">Consigliato</span></h4>
+<p><strong>Pranzo:</strong> a Sanzeno. <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Osteria Casa de Gentili</a></strong> (0463 424136) apre dal venerdì alla domenica: è la più apprezzata della zona.</p>
+<h4>15:00 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a>, Tassullo – visita guidata — <span class="chip chip-rec">Consigliato</span></h4>
 <figure class="photo"><img src="images/castel-valer.jpg" alt="Castel Valer" width="1280" height="853" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Castel_Valer_-_Tassullo.jpg" target="_blank" rel="noopener">Cirolini P</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Castel+Valer+Tassullo" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Castel+Valer+Tassullo" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
 <li><strong>Perché:</strong> è uno dei castelli più belli del Trentino, ancora abitato. Si visita solo con guida. Da Sanzeno sono circa 15 minuti.</li>
 <li><strong>Orari a novembre:</strong> sabato e domenica alle 10:00 e alle 15:00. <strong>Prenotazione obbligatoria</strong> allo 0463 830133. Arrivate 15 minuti prima.</li>
 <li><strong>Costo:</strong> 15 € a persona (19 € con Castel Nanno). Dura circa 1 ora e 15.</li>
-<li><strong>Alternativa:</strong> il <strong>Museo Retico</strong> di Sanzeno (3,50-4 €, gratuito con la Guest Card). L'apertura a novembre non è confermata: telefonate allo 0463 434125.</li>
+<li><strong>Alternativa:</strong> il <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a></strong> di Sanzeno (3,50-4 €, gratuito con la Guest Card). L'apertura a novembre non è confermata: telefonate allo 0463 434125.</li>
 </ul>
-<p><strong>Sera:</strong> libera. Se volete un'altra cena tipica, ci sono Locanda Alpina a Brez e Alle Ciaspole a Tret (vedi la guida gastronomica).</p>
+<p><strong>Sera:</strong> libera. Se volete un'altra cena tipica, ci sono <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a> a Brez e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a> a Tret (vedi la guida gastronomica).</p>
 <hr>
 <h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Domenica 8 novembre – Canyon e rientro</h3>
-<h4>10:00-12:00 · Canyon Rio Sass, Fondo – visita guidata — <span class="chip chip-must">Da non perdere (in più rispetto alle tre mete)</span></h4>
+<h4>10:00-12:00 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a>, Fondo – visita guidata — <span class="chip chip-must">Da non perdere (in più rispetto alle tre mete)</span></h4>
 <figure class="photo"><img src="images/rio-sass.jpg" alt="Canyon Rio Sass" width="1280" height="960" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Canyon_del_rio_Sass_08.jpg" target="_blank" rel="noopener">Syrio</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Canyon+Rio+Sass+Fondo" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Canyon+Rio+Sass+Fondo" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
-<li><strong>Perché:</strong> è una gola stretta e profonda che passa sotto il paese di Fondo, a 10 minuti da Malosco. Si percorre su passerelle e scalette. È lo stesso torrente che forma il Lago Smeraldo.</li>
+<li><strong>Perché:</strong> è una gola stretta e profonda che passa sotto il paese di Fondo, a 10 minuti da Malosco. Si percorre su passerelle e scalette. È lo stesso torrente che forma il <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a>.</li>
 <li><strong>Dati:</strong> circa 2,5 km, circa 1.200 gradini, circa 145 m di dislivello, circa 2 ore.</li>
-<li><strong>Aperto fino al 15 novembre.</strong> Si visita solo con guida e <strong>va prenotato</strong>: 0463 850000, smeraldo@fondo.it. Il ritrovo è alla Cooperativa Smeraldo, piazza San Giovanni 9, Fondo, 10 minuti prima.</li>
+<li><strong>Aperto fino al 15 novembre.</strong> Si visita solo con guida e <strong>va prenotato</strong>: 0463 850000, smeraldo@fondo.it. Il ritrovo è alla <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Cooperativa+Smeraldo%2C+piazza+San+Giovanni+9%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Cooperativa Smeraldo</a>, piazza San Giovanni 9, Fondo, 10 minuti prima.</li>
 <li><strong>Costo:</strong> 12 € a persona (–20% con la Guest Card).</li>
 <li><strong>Attenzione:</strong> dentro fa freddo e c'è umidità. Servono uno strato in più e scarpe che non scivolano. Con maltempo forte la visita può essere annullata.</li>
 </ul>
-<p><strong>Pranzo:</strong> a Fondo, per esempio all'Hotel Ristorante Lago Smeraldo, oppure Alle Ciaspole a Tret (pranzo 12-14).</p>
-<h4>14:00-15:30 · Castel Thun, Vigo di Ton — <span class="chip chip-rec">Consigliato, sulla strada di casa</span></h4>
+<p><strong>Pranzo:</strong> a Fondo, per esempio all'<a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Hotel Ristorante Lago Smeraldo</a>, oppure <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a> a Tret (pranzo 12-14).</p>
+<h4>14:00-15:30 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a>, Vigo di Ton — <span class="chip chip-rec">Consigliato, sulla strada di casa</span></h4>
 <figure class="photo"><img src="images/castel-thun.jpg" alt="Castel Thun" width="1280" height="960" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Castel_Thun_visto_da_est.jpg" target="_blank" rel="noopener">Syrio</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Castel+Thun" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Castel+Thun" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
 <li><strong>Perché:</strong> è un grande castello-museo arredato, sulla discesa verso l'A22, quindi non allunga il viaggio. Da Fondo sono circa 40 km e 45 minuti.</li>
@@ -1404,52 +1409,52 @@ footer {
 </thead>
 <tbody>
 <tr>
-<td>Lago di Tovel</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Tovel" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Tovel</a></td>
 <td><span class="chip chip-must">Da non perdere</span></td>
 <td>Il simbolo della valle; senza folla in bassa stagione. Dipende dalla strada.</td>
 </tr>
 <tr>
-<td>San Romedio</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a></td>
 <td><span class="chip chip-must">Da non perdere</span></td>
 <td>Unico nel suo genere, aperto tutto l'anno, raggiungibile anche in auto.</td>
 </tr>
 <tr>
-<td>Canyon Rio Sass</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a></td>
 <td><span class="chip chip-must">Da non perdere</span></td>
 <td>Ci si va con ogni tempo ed è aperto fino al 15/11.</td>
 </tr>
 <tr>
-<td>Lago Smeraldo</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a></td>
 <td><span class="chip chip-rec">Consigliato</span></td>
 <td>Piccolo ma vicinissimo e grazioso.</td>
 </tr>
 <tr>
-<td>Castel Valer</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a></td>
 <td><span class="chip chip-rec">Consigliato</span></td>
 <td>Visita guidata di qualità (15 €).</td>
 </tr>
 <tr>
-<td>Castel Thun</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a></td>
 <td><span class="chip chip-rec">Consigliato</span></td>
 <td>Sulla strada del ritorno.</td>
 </tr>
 <tr>
-<td>Mendola / Penegal</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Passo+della+Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Mendola</a> / <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Belvedere+Penegal%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Penegal</a></td>
 <td><span class="chip chip-rec">Consigliato</span></td>
 <td>Il tramonto migliore nei dintorni.</td>
 </tr>
 <tr>
-<td>Museo Retico</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a></td>
 <td><span class="chip chip-opt">Facoltativo</span></td>
 <td>Interessante ma di nicchia, apertura incerta.</td>
 </tr>
 <tr>
-<td>Cles e Santa Giustina</td>
+<td>Cles e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Santa+Giustina%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Santa Giustina</a></td>
 <td><span class="chip chip-opt">Facoltativo</span></td>
 <td>Sosta di passaggio.</td>
 </tr>
 <tr>
-<td>Parco Fluviale Novella</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Parco+Fluviale+Novella" target="_blank" rel="noopener" title="Apri in Google Maps">Parco Fluviale Novella</a></td>
 <td><span class="chip chip-skip">Sconsigliato</span></td>
 <td>Probabilmente già chiuso per la stagione.</td>
 </tr>
@@ -1471,7 +1476,7 @@ footer {
 <td>È l'unica finestra di sole sul lago. Riflessi migliori senza vento.</td>
 </tr>
 <tr>
-<td>San Romedio, le chiese viste dal basso (ultimo tratto del sentiero)</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a>, le chiese viste dal basso (ultimo tratto del sentiero)</td>
 <td>11:30-13:30</td>
 <td>La gola è in ombra a lungo, la luce diffusa aiuta.</td>
 </tr>
@@ -1481,17 +1486,17 @@ footer {
 <td>Usate il grandangolo.</td>
 </tr>
 <tr>
-<td>Lago Smeraldo</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a></td>
 <td>13:30-14:30</td>
 <td>Prima che vada in ombra. Vista dall'alto dal Sentiero dell'Erica.</td>
 </tr>
 <tr>
-<td>Penegal / Mendola</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Belvedere+Penegal%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Penegal</a> / Mendola</td>
 <td>16:30-17:05</td>
 <td>Montagne rosa e luci di Bolzano. Portate il teleobiettivo.</td>
 </tr>
 <tr>
-<td>Castel Thun, viale d'ingresso</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a>, viale d'ingresso</td>
 <td>14:00-15:00</td>
 <td>Luce bassa da sud-ovest.</td>
 </tr>
@@ -1517,7 +1522,7 @@ footer {
 <li><strong>Da bere:</strong> il <strong>Groppello di Revò</strong>, un rosso locale prodotto in pochissime bottiglie, il Teroldego, il Trento DOC e la grappa trentina per chiudere.</li>
 </ul>
 <h3>Cena tipica di venerdì 6 novembre</h3>
-<h4>🥇 Nerina – Malgolo di Romeno (consigliato)</h4>
+<h4>🥇 <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a> – Malgolo di Romeno (consigliato)</h4>
 <ul>
 <li><strong>Dove:</strong> via De Gasperi 31, Malgolo di Romeno, circa 10 minuti da Malosco.</li>
 <li><strong>Perché:</strong> è l'<strong>unico locale con l'apertura del venerdì sera confermata da due fonti</strong> (il sito della guida Michelin e quello del locale). La guida Michelin lo segnala per il buon rapporto qualità-prezzo (fascia "€"). È un albergo-ristorante di famiglia dal 1969, con cucina nonesa vera e propria.</li>
@@ -1540,28 +1545,28 @@ footer {
 <tbody>
 <tr>
 <td>2</td>
-<td><strong>Locanda Alpina</strong></td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a></strong></td>
 <td>piazza Municipio 23, Brez (15-20 min)</td>
 <td>Aperto 19:00-21:00 (dato Michelin)</td>
 <td>Segnalato dalla guida Michelin, fascia "€€". Della stessa famiglia dal 1933: gnocchi di patate crude, selvaggina, strudel. Tel. 0463 874396</td>
 </tr>
 <tr>
 <td>3</td>
-<td><strong>Alle Ciaspole</strong></td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a></strong></td>
 <td>località Plazze 4, Tret di Fondo (15 min)</td>
 <td>Probabilmente aperto, 19:30-21:00</td>
 <td>Segnalato dalla guida Michelin, fascia "€€". Ingredienti a km 0, manzo Grigio Alpina, guanciale al Teroldego. Tel. 0463 880117 / 338 4695375</td>
 </tr>
 <tr>
 <td>4</td>
-<td><strong>Osteria Casa de Gentili</strong></td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Osteria Casa de Gentili</a></strong></td>
 <td>piazza di Sanzeno (20-25 min)</td>
 <td>Probabilmente aperta, ma solo ven-dom</td>
 <td>Voto 4,9 su circa 935 recensioni, tortèl e Groppello, 30-40 €. Tel. 0463 424136</td>
 </tr>
 <tr>
 <td>5</td>
-<td><strong>Agritur Mas da la Val</strong></td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Agritur+Mas+da+la+Val%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Agritur Mas da la Val</a></strong></td>
 <td>Maso Molini 19, Ruffrè-Mendola (10-15 min)</td>
 <td>Non verificato</td>
 <td>Prodotti dell'azienda, polenta, formaggi di malga. Tel. 0463 870029</td>
@@ -1570,22 +1575,22 @@ footer {
 </table></div>
 <p><strong>Da escludere venerdì sera:</strong></p>
 <ul>
-<li>La Monteson: a novembre probabilmente chiusa.</li>
-<li>Al Dosarel: apre solo a pranzo.</li>
-<li>Il Falchetto: solo sabato e domenica, dato vecchio.</li>
+<li><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+La+Monteson%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">La Monteson</a>: a novembre probabilmente chiusa.</li>
+<li><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Al+Dosarel%2C+via+25+Aprile+7%2C+Seio%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Al Dosarel</a>: apre solo a pranzo.</li>
+<li><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Il+Falchetto%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">Il Falchetto</a>: solo sabato e domenica, dato vecchio.</li>
 <li>Rifugi e malghe: chiusi per la stagione.</li>
 </ul>
 <h3>Pranzi lungo il percorso</h3>
 <ul>
-<li><strong>Venerdì, Tovel:</strong> pranzo al sacco, perché al lago è tutto chiuso. In alternativa, al rientro, Al Capriolo o l'Albergo Tuenno a Tuenno (orari non verificati), oppure Nerina a pranzo (12:00-13:30).</li>
-<li><strong>Sabato, Sanzeno:</strong> <strong>Osteria Casa de Gentili</strong>, aperta dal venerdì alla domenica. Altri posti in paese: Anaunia, Le Plaze, Bar alla Fontana.</li>
-<li><strong>Domenica, Fondo:</strong> Hotel Ristorante Lago Smeraldo (sala in legno con vista sul lago), Pizzeria Al Folon, oppure Alle Ciaspole a Tret (12-14).</li>
+<li><strong>Venerdì, Tovel:</strong> pranzo al sacco, perché al lago è tutto chiuso. In alternativa, al rientro, <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Al+Capriolo%2C+Tuenno" target="_blank" rel="noopener" title="Apri in Google Maps">Al Capriolo</a> o l'<a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Tuenno%2C+Tuenno" target="_blank" rel="noopener" title="Apri in Google Maps">Albergo Tuenno</a> a Tuenno (orari non verificati), oppure <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a> a pranzo (12:00-13:30).</li>
+<li><strong>Sabato, Sanzeno:</strong> <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Osteria Casa de Gentili</a></strong>, aperta dal venerdì alla domenica. Altri posti in paese: <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Anaunia%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Anaunia</a>, <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Plaze%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Le Plaze</a>, <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Bar+alla+Fontana%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Bar alla Fontana</a>.</li>
+<li><strong>Domenica, Fondo:</strong> <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Hotel Ristorante Lago Smeraldo</a> (sala in legno con vista sul lago), <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Pizzeria+Al+Folon%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Pizzeria Al Folon</a>, oppure <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a> a Tret (12-14).</li>
 <li><strong>Per risparmiare:</strong> un tagliere con speck, mele e formaggi del caseificio costa circa 10-12 € a persona.</li>
 </ul>
 <h3>Prodotti da portare a casa</h3>
 <ul>
 <li>
-<p><strong>MondoMelinda</strong>, via della Cooperazione 21, Segno: negozio aperto da martedì a domenica, 9-13 e 15-19, tel. 0463 671101. I tour vanno prenotati allo 0463 830133:</p>
+<p><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Mondo+Melinda%2C+via+della+Cooperazione+21%2C+Segno" target="_blank" rel="noopener" title="Apri in Google Maps">MondoMelinda</a></strong>, via della Cooperazione 21, Segno: negozio aperto da martedì a domenica, 9-13 e 15-19, tel. 0463 671101. I tour vanno prenotati allo 0463 830133:</p>
 <ul>
 <li>15 €: "Il mondo dietro una mela";</li>
 <li>22 €: le celle sotterranee;</li>
@@ -1596,12 +1601,12 @@ Il calendario di novembre non è confermato.</li>
 <li>
 <p><strong>Mortandela:</strong></p>
 <ul>
-<li>Macelleria <strong>Fratelli Corrà</strong>, Smarano (0463 536160);</li>
-<li><strong>Dal Massimo Goloso</strong>, Coredo (0463 536129).</li>
+<li>Macelleria <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Macelleria+Fratelli+Corr%C3%A0%2C+Smarano" target="_blank" rel="noopener" title="Apri in Google Maps">Fratelli Corrà</a></strong>, Smarano (0463 536160);</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Dal+Massimo+Goloso%2C+Coredo" target="_blank" rel="noopener" title="Apri in Google Maps">Dal Massimo Goloso</a></strong>, Coredo (0463 536129).</li>
 </ul>
 </li>
-<li><strong>Formaggi:</strong> Caseificio Sociale di Romeno, via alla Piena 62 (0463 875177).</li>
-<li><strong>Groppello:</strong> cantina <strong>El Zeremia</strong> a Revò, con visite su prenotazione.</li>
+<li><strong>Formaggi:</strong> <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Caseificio+Sociale+di+Romeno%2C+via+alla+Piena+62" target="_blank" rel="noopener" title="Apri in Google Maps">Caseificio Sociale di Romeno</a>, via alla Piena 62 (0463 875177).</li>
+<li><strong>Groppello:</strong> cantina <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Cantina+El+Zeremia%2C+Rev%C3%B2" target="_blank" rel="noopener" title="Apri in Google Maps">El Zeremia</a></strong> a Revò, con visite su prenotazione.</li>
 </ul>
 <h3>Consigli</h3>
 <ul>
@@ -1620,7 +1625,7 @@ Il calendario di novembre non è confermato.</li>
 <p><strong>Attenzione:</strong> novembre è bassa stagione e nessun locale pubblica online le ferie autunnali 2026. Gli stati qui sotto valgono per gli orari settimanali: <strong>telefonate prima di andare</strong> per escludere chiusure per ferie. I tempi in auto da Malosco sono stime, non calcolati con un navigatore.</p>
 </blockquote>
 <h3>Ristoranti di cucina tipica</h3>
-<h4>Nerina, Malgolo di Romeno</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a>, Malgolo di Romeno</h4>
 <p><span class="chip chip-must">Da non perdere</span></p>
 <ul>
 <li><strong>Dove:</strong> Via De Gasperi 31, Malgolo · tel. 0463 510111 · circa 12–15 min in auto</li>
@@ -1630,7 +1635,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>5–8 novembre:</strong> probabile, "aperto tutto l'anno" secondo Visit Val di Non · prenotare per telefono</li>
 <li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/romeno/ristorante/nerina" target="_blank" rel="noopener">https://guide.michelin.com/it/it/trentino-alto-adige/romeno/ristorante/nerina</a> · <a href="https://www.visitvaldinon.it/en/hotels/nerina" target="_blank" rel="noopener">https://www.visitvaldinon.it/en/hotels/nerina</a></li>
 </ul>
-<h4>Locanda Alpina, Brez</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a>, Brez</h4>
 <p><span class="chip chip-rec">Consigliato</span></p>
 <ul>
 <li><strong>Dove:</strong> Piazza Municipio 23, Brez · tel. 0463 874396 · circa 15 min in auto</li>
@@ -1640,7 +1645,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>5–8 novembre:</strong> probabile, da confermare · prenotazione consigliata</li>
 <li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/brez/ristorante/locanda-alpina" target="_blank" rel="noopener">https://guide.michelin.com/it/it/trentino-alto-adige/brez/ristorante/locanda-alpina</a> · <a href="https://www.locandalpina.it" target="_blank" rel="noopener">https://www.locandalpina.it</a></li>
 </ul>
-<h4>Alle Ciaspole, Tret (Borgo d'Anaunia)</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a>, Tret (Borgo d'Anaunia)</h4>
 <p><span class="chip chip-rec">Consigliato</span></p>
 <ul>
 <li><strong>Dove:</strong> Tret, sulla strada del Passo Palade · tel. 0463 880117 / 338 4695375 · circa 15 min in auto</li>
@@ -1650,7 +1655,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>5–8 novembre:</strong> da confermare per telefono</li>
 <li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/fondo/ristorante/alle-ciaspole" target="_blank" rel="noopener">https://guide.michelin.com/it/it/trentino-alto-adige/fondo/ristorante/alle-ciaspole</a> · <a href="https://www.alleciaspole.it" target="_blank" rel="noopener">https://www.alleciaspole.it</a></li>
 </ul>
-<h4>Al Dosarel, Seio di Sarnonico</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Al+Dosarel%2C+via+25+Aprile+7%2C+Seio%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Al Dosarel</a>, Seio di Sarnonico</h4>
 <p><span class="chip chip-rec">Consigliato</span></p>
 <ul>
 <li><strong>Dove:</strong> Via 25 Aprile 7/B, Seio · tel. 339 8255040 · circa 5 min in auto</li>
@@ -1660,10 +1665,10 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>5–8 novembre:</strong> da confermare per telefono</li>
 <li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/it/poi/ristorante-al-dosarel" target="_blank" rel="noopener">https://www.visitvaldinon.it/it/poi/ristorante-al-dosarel</a> · <a href="https://www.visitvaldinon.it/it/tortel-gropel-la-cena-tipica-della-val-di-non" target="_blank" rel="noopener">https://www.visitvaldinon.it/it/tortel-gropel-la-cena-tipica-della-val-di-non</a></li>
 </ul>
-<h4>Osteria Casa de Gentili, Sanzeno</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Osteria Casa de Gentili</a>, Sanzeno</h4>
 <p><span class="chip chip-rec">Consigliato</span></p>
 <ul>
-<li><strong>Dove:</strong> cortile di Casa de' Gentili, piazza di Sanzeno · cell. 348 4273235 · circa 25 min in auto, comoda il sabato di San Romedio</li>
+<li><strong>Dove:</strong> cortile di Casa de' Gentili, piazza di Sanzeno · cell. 348 4273235 · circa 25 min in auto, comoda il sabato di <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a></li>
 <li><strong>Cucina:</strong> osteria ed enoteca; tortel di patate</li>
 <li><strong>Prezzo:</strong> circa 30–40 € a persona (approssimativo, recensione su RestaurantGuru)</li>
 <li><strong>Valutazione:</strong> RestaurantGuru 4,8 su quasi 1.000 voti (data non indicata)</li>
@@ -1671,19 +1676,19 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>5–8 novembre:</strong> da confermare per telefono</li>
 <li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/it/poi/osteria-casa-de-gentili" target="_blank" rel="noopener">https://www.visitvaldinon.it/it/poi/osteria-casa-de-gentili</a> · <a href="https://restaurantguru.it/Sanzeno" target="_blank" rel="noopener">https://restaurantguru.it/Sanzeno</a></li>
 </ul>
-<h4>Alla Pineta, Tavon di Predaia</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alla+Pineta%2C+via+al+Santuario+17%2C+Tavon%2C+Predaia" target="_blank" rel="noopener" title="Apri in Google Maps">Alla Pineta</a>, Tavon di Predaia</h4>
 <p><span class="chip chip-opt">Facoltativo</span></p>
 <ul>
-<li><strong>Dove:</strong> Via al Santuario 17, Tavon · tel. 0463 536866 · circa 30 min in auto, sulla strada per Castel Thun</li>
+<li><strong>Dove:</strong> Via al Santuario 17, Tavon · tel. 0463 536866 · circa 30 min in auto, sulla strada per <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a></li>
 <li><strong>Cucina:</strong> marchio "Osteria Tipica Trentina" dal 2003, ricette trentine della famiglia Sicher</li>
 <li><strong>Valutazione:</strong> Gambero Rosso 81/100 (2025)</li>
 <li><strong>Orari e 5–8 novembre:</strong> non trovati, da confermare per telefono</li>
 <li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/en/poi/ristorante-alla-pineta" target="_blank" rel="noopener">https://www.visitvaldinon.it/en/poi/ristorante-alla-pineta</a> · <a href="https://www.gamberorosso.it/?p=82044" target="_blank" rel="noopener">https://www.gamberorosso.it/?p=82044</a></li>
 </ul>
-<h4>Ristorante Centrale, Flavon</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Pizzeria+Centrale%2C+via+Nazionale+39%2C+Flavon" target="_blank" rel="noopener" title="Apri in Google Maps">Ristorante Centrale</a>, Flavon</h4>
 <p><span class="chip chip-opt">Facoltativo</span></p>
 <ul>
-<li><strong>Dove:</strong> Via Nazionale 39, Flavon · tel. 0461 652178 · circa 40–45 min in auto, vicino a Castel Thun (domenica)</li>
+<li><strong>Dove:</strong> Via Nazionale 39, Flavon · tel. 0461 652178 · circa 40–45 min in auto, vicino a <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a> (domenica)</li>
 <li><strong>Cucina:</strong> ristorante-pizzeria con tortel di patate (anche senza glutine), mortandela, orzotto, risotto al Teroldego, strudel</li>
 <li><strong>Orari:</strong> tutti i giorni, pranzo 12:00–15:00, cena 18:00–23:00 (sito ufficiale)</li>
 <li><strong>5–8 novembre:</strong> probabile · prenotare nel fine settimana</li>
@@ -1691,13 +1696,13 @@ Il calendario di novembre non è confermato.</li>
 </ul>
 <h4>Chiusi o da evitare in queste date</h4>
 <ul>
-<li><strong>Il Falchetto, Regole di Malosco:</strong> chiuso ogni anno dal 2 novembre al 3 dicembre (https://visitvaldinon.it/en/poi/ristorante-hotel-il-falchetto)</li>
-<li><strong>La Monteson, Regole di Malosco:</strong> apre solo fino al 1° novembre (https://www.visitvaldinon.it/en/poi/ristorante-la-monteson)</li>
-<li><strong>Agritur Mas da la Val, Ruffrè:</strong> giorni di apertura del ristorante non pubblicati, solo dopo una telefonata (0463 870029)</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Il+Falchetto%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">Il Falchetto</a>, Regole di Malosco:</strong> chiuso ogni anno dal 2 novembre al 3 dicembre (https://visitvaldinon.it/en/poi/ristorante-hotel-il-falchetto)</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+La+Monteson%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">La Monteson</a>, Regole di Malosco:</strong> apre solo fino al 1° novembre (https://www.visitvaldinon.it/en/poi/ristorante-la-monteson)</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Agritur+Mas+da+la+Val%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Agritur Mas da la Val</a>, Ruffrè:</strong> giorni di apertura del ristorante non pubblicati, solo dopo una telefonata (0463 870029)</li>
 </ul>
 <h3>Colazione tipica: i bar migliori</h3>
 <p>Nessun bar della zona documenta online una colazione "di malga" (yogurt, formaggi, confetture, mele della valle): per quella chiedete anche alla vostra struttura a Malosco.</p>
-<h4>Peccato di Gola, Fondo</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Peccato+di+Gola%2C+via+Cesare+Battisti+17%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Peccato di Gola</a>, Fondo</h4>
 <p><span class="chip chip-rec">Consigliato</span></p>
 <ul>
 <li><strong>Dove:</strong> Via Cesare Battisti 17, Fondo · tel. 0463 835169 · circa 5 min in auto</li>
@@ -1706,7 +1711,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>Orari:</strong> martedì–sabato 8:00–13:00 e 15:00–19:00, domenica 8:00–12:15 · chiuso il lunedì</li>
 <li><strong>Fonte:</strong> <a href="https://restaurantguru.com/Peccato-Di-Gola-Fondo" target="_blank" rel="noopener">https://restaurantguru.com/Peccato-Di-Gola-Fondo</a></li>
 </ul>
-<h4>F.lli Borzaga, Cavareno</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+Pasticceria+F.lli+Borzaga%2C+piazza+Giovanni+Prati+30%2C+Cavareno" target="_blank" rel="noopener" title="Apri in Google Maps">F.lli Borzaga</a>, Cavareno</h4>
 <p><span class="chip chip-rec">Consigliato</span></p>
 <ul>
 <li><strong>Dove:</strong> Piazza Giovanni Prati 30, Cavareno · tel. 0463 831355 · circa 8–10 min in auto</li>
@@ -1715,7 +1720,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>Orari:</strong> martedì–sabato 7:00–13:00 e 15:30–19:30, domenica 7:00–12:30 · chiuso il lunedì</li>
 <li><strong>Fonte:</strong> <a href="https://restaurantguru.com/FLli-Borzaga-Bakery-Pastry-Pizzas-Buns-Cavareno" target="_blank" rel="noopener">https://restaurantguru.com/FLli-Borzaga-Bakery-Pastry-Pizzas-Buns-Cavareno</a></li>
 </ul>
-<h4>Pasticceria Ramus, Cles</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Pasticceria+Ramus%2C+via+Roma+10%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Pasticceria Ramus</a>, Cles</h4>
 <p><span class="chip chip-opt">Facoltativo</span></p>
 <ul>
 <li><strong>Dove:</strong> Via Roma 10, Cles, dal 1962, con sala da tè · tel. 0463 421771 · circa 30 min, comoda il venerdì verso Tovel</li>
@@ -1724,7 +1729,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>Orari:</strong> lunedì–sabato 7:30–12:30 e 15:00–19:00, domenica 7:30–12:30</li>
 <li><strong>Fonti:</strong> <a href="https://restaurantguru.com/Ramus-Cles" target="_blank" rel="noopener">https://restaurantguru.com/Ramus-Cles</a> · <a href="https://www.sluurpy.it/cles/ristorante/183813/pasticceria-ramus" target="_blank" rel="noopener">https://www.sluurpy.it/cles/ristorante/183813/pasticceria-ramus</a></li>
 </ul>
-<h4>Le Goloserie, Cles</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Goloserie%2C+via+Marconi+62%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Le Goloserie</a>, Cles</h4>
 <p><span class="chip chip-opt">Facoltativo</span></p>
 <ul>
 <li><strong>Dove:</strong> Via G. Marconi 62, Cles · tel. 0463 421179 · circa 30 min in auto</li>
@@ -1732,7 +1737,7 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>Orari ufficiali (19/09/2026–31/01/2027):</strong> lunedì–venerdì 6:30–19:30, sabato 6:30–13:00, domenica 6:30–12:00 · aperto nei giorni del viaggio</li>
 <li><strong>Fonte:</strong> <a href="https://www.outdooractive.com/en/gastro/val-di-non/pasticceria-le-goloserie/807679824/" target="_blank" rel="noopener">https://www.outdooractive.com/en/gastro/val-di-non/pasticceria-le-goloserie/807679824/</a></li>
 </ul>
-<h4>Dal Gran al Pan, Sarnonico</h4>
+<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Dal+Gran+al+Pan%2C+via+Cesare+Battisti+15%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Dal Gran al Pan</a>, Sarnonico</h4>
 <p><span class="chip chip-opt">Facoltativo</span></p>
 <ul>
 <li><strong>Dove:</strong> Via Cesare Battisti 15, Sarnonico · tel. 379 195 8405 · circa 5 min in auto</li>
@@ -1786,9 +1791,9 @@ Il calendario di novembre non è confermato.</li>
 </thead>
 <tbody>
 <tr>
-<td>APT Val di Non, via Roma 21, Fondo</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=APT+Val+di+Non%2C+via+Roma+21%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">APT Val di Non</a>, via Roma 21, Fondo</td>
 <td>0463 830133 · info@visitvaldinon.it</td>
-<td>Strada per Tovel, <strong>prenotazione di Castel Valer</strong>, Museo Retico, Melinda, eventi</td>
+<td>Strada per Tovel, <strong>prenotazione di <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a></strong>, <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a>, Melinda, eventi</td>
 </tr>
 <tr>
 <td>Parco Adamello Brenta</td>
@@ -1796,37 +1801,37 @@ Il calendario di novembre non è confermato.</li>
 <td>Strada e parcheggio di Tovel</td>
 </tr>
 <tr>
-<td>Cooperativa Smeraldo (Canyon Rio Sass)</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Cooperativa+Smeraldo%2C+piazza+San+Giovanni+9%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Cooperativa Smeraldo</a> (<a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a>)</td>
 <td>0463 850000 · smeraldo@fondo.it</td>
 <td><strong>Prenotazione per domenica alle 10:00</strong></td>
 </tr>
 <tr>
-<td>Santuario di San Romedio</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Santuario di San Romedio</a></td>
 <td>0463 536198</td>
 <td>Sentiero nella roccia aperto?</td>
 </tr>
 <tr>
-<td><strong>Nerina</strong> (cena di venerdì)</td>
+<td><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a></strong> (cena di venerdì)</td>
 <td><strong>0463 510111</strong></td>
 <td>Prenotazione alle 19:30</td>
 </tr>
 <tr>
-<td>Locanda Alpina, Brez</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a>, Brez</td>
 <td>0463 874396</td>
 <td>Cena alternativa</td>
 </tr>
 <tr>
-<td>Alle Ciaspole, Tret</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a>, Tret</td>
 <td>0463 880117</td>
 <td>Cena o pranzo alternativo</td>
 </tr>
 <tr>
-<td>Casa de Gentili, Sanzeno</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Casa de Gentili</a>, Sanzeno</td>
 <td>0463 424136</td>
 <td>Pranzo di sabato</td>
 </tr>
 <tr>
-<td>Museo Retico</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Retico%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Museo Retico</a></td>
 <td>0463 434125</td>
 <td>Orari</td>
 </tr>
@@ -1846,27 +1851,27 @@ Il calendario di novembre non è confermato.</li>
 <td>07:03 / 16:53 circa. <strong>All'auto entro le 16:00</strong> nelle valli</td>
 </tr>
 <tr>
-<td>San Romedio</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a></td>
 <td>tutti i giorni 9:00-17:30</td>
 </tr>
 <tr>
-<td>Castel Valer</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a></td>
 <td>sab-dom 10:00 e 15:00, solo su prenotazione</td>
 </tr>
 <tr>
-<td>Castel Thun</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a></td>
 <td><strong>solo sab-dom</strong>, 9:30-17:00</td>
 </tr>
 <tr>
-<td>Canyon Rio Sass</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a></td>
 <td><strong>fino al 15/11</strong>, partenze 10:00 e 14:00</td>
 </tr>
 <tr>
-<td>Nerina</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a></td>
 <td>cena 19:00-20:30, chiuso il martedì</td>
 </tr>
 <tr>
-<td>MondoMelinda (negozio)</td>
+<td><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Mondo+Melinda%2C+via+della+Cooperazione+21%2C+Segno" target="_blank" rel="noopener" title="Apri in Google Maps">MondoMelinda</a> (negozio)</td>
 <td>mar-dom 9-13 e 15-19</td>
 </tr>
 <tr>
@@ -1877,10 +1882,10 @@ Il calendario di novembre non è confermato.</li>
 </table></div>
 <h3>In una riga</h3>
 <ul>
-<li><strong>Gio:</strong> Lago Smeraldo (parcheggio gratuito) → tramonto alla Mendola.</li>
-<li><strong>Ven:</strong> Tovel (pranzo al sacco, niente campo) → cena da Nerina.</li>
-<li><strong>Sab:</strong> San Romedio da Sanzeno → Castel Valer alle 15:00.</li>
-<li><strong>Dom:</strong> Rio Sass alle 10:00 → Castel Thun → A22 da San Michele.</li>
+<li><strong>Gio:</strong> <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo</a> (parcheggio gratuito) → tramonto alla Mendola.</li>
+<li><strong>Ven:</strong> Tovel (pranzo al sacco, niente campo) → cena da <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a>.</li>
+<li><strong>Sab:</strong> <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a> da Sanzeno → <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Valer%2C+Tassullo" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Valer</a> alle 15:00.</li>
+<li><strong>Dom:</strong> Rio Sass alle 10:00 → <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a> → A22 da San Michele.</li>
 </ul>
 <h3>Da non dimenticare</h3>
 <ul>
