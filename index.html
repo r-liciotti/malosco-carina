@@ -1000,6 +1000,9 @@ body::before {
   padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg);
 }
 .topbar a:hover { border-color: var(--lake); color: var(--lake); }
+.topbar a[aria-current="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+#nav-oggi { border-color: var(--sat); color: var(--sat); }
+#nav-oggi[hidden] { display: none; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--lake); outline-offset: 2px; }
 
 main {
@@ -1063,7 +1066,30 @@ h3.day-head {
   background: linear-gradient(var(--sat) 0 33%, #ffffff 33% 67%, var(--sat) 67%);
   box-shadow: 0 0 0 1px var(--line);
 }
+h3.day-head { scroll-margin-top: 64px; }
 .sec-itinerario h4 { padding-left: 12px; border-left: 3px solid var(--lake); }
+.day-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0.6em 0 1em; }
+.day-nav span { font-size: 0.9rem; color: var(--muted); }
+.btn-nav {
+  display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px;
+  background: var(--lake); color: var(--bg); font-weight: 700; text-decoration: none; min-height: 44px;
+}
+.btn-nav::before { content: "➜"; font-size: 1.05em; }
+.btn-nav:hover { filter: brightness(1.1); }
+
+/* Dove mangiare: schede richiudibili. */
+details.venue { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); margin: 0.6em 0; }
+details.venue > summary { list-style: none; cursor: pointer; padding: 12px 44px 12px 14px; position: relative; }
+details.venue > summary::-webkit-details-marker { display: none; }
+details.venue > summary::after {
+  content: ""; position: absolute; right: 16px; top: 50%; width: 9px; height: 9px; margin-top: -7px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .15s;
+}
+details.venue[open] > summary::after { transform: rotate(-135deg); margin-top: -2px; }
+details.venue h4 { margin: 0 0 6px; }
+.venue-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 0.9rem; color: var(--muted); }
+.venue-meta span + span:not(:nth-child(2))::before { content: "·"; margin-right: 6px; }
+details.venue > ul { margin: 0; padding: 0 14px 12px 2.2em; }
 
 /* Mappa. */
 #map {
@@ -1147,6 +1173,7 @@ footer {
 
 <header class="topbar">
 <nav aria-label="Sezioni della guida">
+<a href="#itinerario" id="nav-oggi" hidden>Oggi</a>
 <a href="#panoramica">Panoramica</a>
 <a href="#mappa">Mappa</a>
 <a href="#itinerario">Itinerario</a>
@@ -1299,7 +1326,8 @@ footer {
 <h2>Itinerario – Val di Non, 5-8 novembre 2026</h2>
 <p>Base: Malosco. Le distanze sono stime (±10%). Luce utile all'aperto: dalle 10 alle 15:30-16. Tramonto alle 16:53 circa.</p>
 <hr>
-<h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Giovedì 5 novembre – arrivo e Lago Smeraldo</h3>
+<h3 class="day-head" id="giorno-1" data-date="2026-11-05"><span class="segnavia" aria-hidden="true"></span>Giovedì 5 novembre – arrivo e Lago Smeraldo</h3>
+<p class="day-nav"><a class="btn-nav" href="https://www.google.com/maps/dir/?api=1&amp;origin=46.433333%2C11.15&amp;destination=46.433333%2C11.15&amp;travelmode=driving&amp;waypoints=46.444678%2C11.143531%7C46.438226%2C11.2165" target="_blank" rel="noopener">Naviga la giornata</a><span>2 tappe in auto, da Malosco e ritorno</span></p>
 <p><strong>Mattina:</strong> viaggio. Pranzo a Malosco o a Fondo.</p>
 <h4>14:30-15:45 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Smeraldo%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Lago Smeraldo e Burrone di Fondo</a> — <span class="chip chip-rec">Consigliato (una delle tre mete richieste)</span></h4>
 <figure class="photo"><img src="images/lago-smeraldo.jpg" alt="Lago Smeraldo, Fondo" width="1280" height="853" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Fondo_Lago_Smeraldo.jpg" target="_blank" rel="noopener">ManfredK</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Lago+Smeraldo+Fondo" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Lago+Smeraldo+Fondo" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
@@ -1323,7 +1351,8 @@ footer {
 </ul>
 <p><strong>Sera:</strong> a Malosco. Ricordate di confermare la prenotazione da <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a> per venerdì.</p>
 <hr>
-<h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Venerdì 6 novembre – Lago di Tovel</h3>
+<h3 class="day-head" id="giorno-2" data-date="2026-11-06"><span class="segnavia" aria-hidden="true"></span>Venerdì 6 novembre – Lago di Tovel</h3>
+<p class="day-nav"><a class="btn-nav" href="https://www.google.com/maps/dir/?api=1&amp;origin=46.433333%2C11.15&amp;destination=46.433333%2C11.15&amp;travelmode=driving&amp;waypoints=46.26155%2C10.947997%7C46.373122%2C11.049242%7CAlbergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Romeno" target="_blank" rel="noopener">Naviga la giornata</a><span>3 tappe in auto, da Malosco e ritorno</span></p>
 <p>Il meteo previsto è sole e tempo stabile. È anche giorno di <strong>silenzio venatorio</strong>, cioè non si caccia: il giorno migliore per Tovel.</p>
 <h4>9:00 partenza → 10:15 circa arrivo · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Tovel" target="_blank" rel="noopener" title="Apri in Google Maps">Lago di Tovel</a> — <span class="chip chip-must">Da non perdere</span></h4>
 <figure class="photo"><img src="images/tovel.jpg" alt="Lago di Tovel" width="1280" height="707" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Lago_di_Tovel_02.jpg" target="_blank" rel="noopener">Llorenzi</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Lago+di+Tovel" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Lago+di+Tovel" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
@@ -1354,7 +1383,8 @@ footer {
 <h4>19:30 · Cena tipica da <strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a></strong>, Malgolo di Romeno</h4>
 <p>Circa 10 minuti da Malosco. Prenotazione per telefono obbligatoria: 0463 510111. I dettagli e le alternative sono in <a href="#cucina">food_guide.md</a>.</p>
 <hr>
-<h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Sabato 7 novembre – San Romedio e un castello</h3>
+<h3 class="day-head" id="giorno-3" data-date="2026-11-07"><span class="segnavia" aria-hidden="true"></span>Sabato 7 novembre – San Romedio e un castello</h3>
+<p class="day-nav"><a class="btn-nav" href="https://www.google.com/maps/dir/?api=1&amp;origin=46.433333%2C11.15&amp;destination=46.433333%2C11.15&amp;travelmode=driving&amp;waypoints=46.370221%2C11.080696%7C46.368851%2C11.106544%7C46.330546%2C11.047371" target="_blank" rel="noopener">Naviga la giornata</a><span>3 tappe in auto, da Malosco e ritorno</span></p>
 <h4>9:15-13:00 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Santuario di San Romedio</a> a piedi da Sanzeno — <span class="chip chip-must">Da non perdere</span></h4>
 <figure class="photo"><img src="images/san-romedio.jpg" alt="Santuario di San Romedio" width="960" height="1280" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Santuario_di_San_Romedio_-_panoramio.jpg" target="_blank" rel="noopener">Rolandob</a>, <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Santuario+di+San+Romedio" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Santuario+di+San+Romedio" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
@@ -1377,7 +1407,8 @@ footer {
 </ul>
 <p><strong>Sera:</strong> libera. Se volete un'altra cena tipica, ci sono <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a> a Brez e <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a> a Tret (vedi la guida gastronomica).</p>
 <hr>
-<h3 class="day-head"><span class="segnavia" aria-hidden="true"></span>Domenica 8 novembre – Canyon e rientro</h3>
+<h3 class="day-head" id="giorno-4" data-date="2026-11-08"><span class="segnavia" aria-hidden="true"></span>Domenica 8 novembre – Canyon e rientro</h3>
+<p class="day-nav"><a class="btn-nav" href="https://www.google.com/maps/dir/?api=1&amp;origin=46.433333%2C11.15&amp;destination=Casello+A22+San+Michele+all%27Adige&amp;travelmode=driving&amp;waypoints=46.438854%2C11.137522%7C46.273686%2C11.090311" target="_blank" rel="noopener">Naviga la giornata</a><span>3 tappe in auto, da Malosco fino all'A22</span></p>
 <h4>10:00-12:00 · <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Canyon+Rio+Sass%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Canyon Rio Sass</a>, Fondo – visita guidata — <span class="chip chip-must">Da non perdere (in più rispetto alle tre mete)</span></h4>
 <figure class="photo"><img src="images/rio-sass.jpg" alt="Canyon Rio Sass" width="1280" height="960" loading="lazy" decoding="async"><figcaption><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Canyon_del_rio_Sass_08.jpg" target="_blank" rel="noopener">Syrio</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span><span class="gallery-links">Altre foto: <a href="https://www.tripadvisor.it/Search?q=Canyon+Rio+Sass+Fondo" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.google.com/search?tbm=isch&amp;q=Canyon+Rio+Sass+Fondo" target="_blank" rel="noopener">Google Immagini</a></span></figcaption></figure>
 <ul>
@@ -1625,48 +1656,43 @@ Il calendario di novembre non è confermato.</li>
 <p><strong>Attenzione:</strong> novembre è bassa stagione e nessun locale pubblica online le ferie autunnali 2026. Gli stati qui sotto valgono per gli orari settimanali: <strong>telefonate prima di andare</strong> per escludere chiusure per ferie. I tempi in auto da Malosco sono stime, non calcolati con un navigatore.</p>
 </blockquote>
 <h3>Ristoranti di cucina tipica</h3>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a>, Malgolo di Romeno</h4>
-<p><span class="chip chip-must">Da non perdere</span></p>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Albergo+Ristorante+Nerina%2C+via+De+Gasperi+31%2C+Malgolo%2C+Romeno" target="_blank" rel="noopener" title="Apri in Google Maps">Nerina</a>, Malgolo di Romeno</h4><span class="venue-meta"><span><span class="chip chip-must">Da non perdere</span></span><span>Probabile</span><span>chiuso martedì</span><span>12–15 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via De Gasperi 31, Malgolo · tel. 0463 510111 · circa 12–15 min in auto</li>
 <li><strong>Cucina:</strong> trattoria di famiglia dal 1969: salumi nonesi, ciuìga con rape, gnocchi di mais Spin con mortandela e fonduta di casolèt, canederli con fonduta di puzzone di Moena</li>
 <li><strong>Prezzo:</strong> fascia Michelin "€", Bib Gourmand (Guida Michelin, letta il 2/11/2026); a persona circa 30–45 € (approssimativo, stima)</li>
 <li><strong>Orari:</strong> pranzo 12:00–13:30, cena 19:00–20:30 · chiuso il martedì</li>
 <li><strong>5–8 novembre:</strong> probabile, "aperto tutto l'anno" secondo Visit Val di Non · prenotare per telefono</li>
-<li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/romeno/ristorante/nerina" target="_blank" rel="noopener">https://guide.michelin.com/it/it/trentino-alto-adige/romeno/ristorante/nerina</a> · <a href="https://www.visitvaldinon.it/en/hotels/nerina" target="_blank" rel="noopener">https://www.visitvaldinon.it/en/hotels/nerina</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a>, Brez</h4>
-<p><span class="chip chip-rec">Consigliato</span></p>
+<li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/romeno/ristorante/nerina" target="_blank" rel="noopener" title="https://guide.michelin.com/it/it/trentino-alto-adige/romeno/ristorante/nerina">Guida Michelin</a> · <a href="https://www.visitvaldinon.it/en/hotels/nerina" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/en/hotels/nerina">Visit Val di Non</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Locanda+Alpina%2C+piazza+Municipio+23%2C+Brez" target="_blank" rel="noopener" title="Apri in Google Maps">Locanda Alpina</a>, Brez</h4><span class="venue-meta"><span><span class="chip chip-rec">Consigliato</span></span><span>Probabile</span><span>chiuso martedì</span><span>15 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Piazza Municipio 23, Brez · tel. 0463 874396 · circa 15 min in auto</li>
 <li><strong>Cucina:</strong> trentina, nonesa e tirolese in un edificio dell'Ottocento: gnocchi di patate crude con pancetta croccante e ricotta affumicata, selvaggina, strudel</li>
 <li><strong>Prezzo:</strong> fascia Michelin "€€", cucina regionale (Guida Michelin, letta il 2/11/2026)</li>
 <li><strong>Orari:</strong> lunedì solo pranzo · martedì chiuso · mercoledì–domenica pranzo e cena (cena dalle 19:00)</li>
 <li><strong>5–8 novembre:</strong> probabile, da confermare · prenotazione consigliata</li>
-<li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/brez/ristorante/locanda-alpina" target="_blank" rel="noopener">https://guide.michelin.com/it/it/trentino-alto-adige/brez/ristorante/locanda-alpina</a> · <a href="https://www.locandalpina.it" target="_blank" rel="noopener">https://www.locandalpina.it</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a>, Tret (Borgo d'Anaunia)</h4>
-<p><span class="chip chip-rec">Consigliato</span></p>
+<li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/brez/ristorante/locanda-alpina" target="_blank" rel="noopener" title="https://guide.michelin.com/it/it/trentino-alto-adige/brez/ristorante/locanda-alpina">Guida Michelin</a> · <a href="https://www.locandalpina.it" target="_blank" rel="noopener" title="https://www.locandalpina.it">locandalpina.it</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alle+Ciaspole%2C+Tret" target="_blank" rel="noopener" title="Apri in Google Maps">Alle Ciaspole</a>, Tret (Borgo d'Anaunia)</h4><span class="venue-meta"><span><span class="chip chip-rec">Consigliato</span></span><span>Da confermare</span><span>chiuso martedì</span><span>15 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Tret, sulla strada del Passo Palade · tel. 0463 880117 / 338 4695375 · circa 15 min in auto</li>
 <li><strong>Cucina:</strong> km 0: manzo di razza Grigio Alpina, salmerino, formaggi locali, selvaggina, pane e pasta con grano coltivato tra Amblar e Cavareno</li>
 <li><strong>Prezzo:</strong> fascia Michelin "€€", nella guida dal 2021 (letta il 2/11/2026)</li>
 <li><strong>Orari:</strong> pranzo 12:00–14:00, cena 19:30–21:00 · chiuso il martedì</li>
 <li><strong>5–8 novembre:</strong> da confermare per telefono</li>
-<li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/fondo/ristorante/alle-ciaspole" target="_blank" rel="noopener">https://guide.michelin.com/it/it/trentino-alto-adige/fondo/ristorante/alle-ciaspole</a> · <a href="https://www.alleciaspole.it" target="_blank" rel="noopener">https://www.alleciaspole.it</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Al+Dosarel%2C+via+25+Aprile+7%2C+Seio%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Al Dosarel</a>, Seio di Sarnonico</h4>
-<p><span class="chip chip-rec">Consigliato</span></p>
+<li><strong>Fonti:</strong> <a href="https://guide.michelin.com/it/it/trentino-alto-adige/fondo/ristorante/alle-ciaspole" target="_blank" rel="noopener" title="https://guide.michelin.com/it/it/trentino-alto-adige/fondo/ristorante/alle-ciaspole">Guida Michelin</a> · <a href="https://www.alleciaspole.it" target="_blank" rel="noopener" title="https://www.alleciaspole.it">alleciaspole.it</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Al+Dosarel%2C+via+25+Aprile+7%2C+Seio%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Al Dosarel</a>, Seio di Sarnonico</h4><span class="venue-meta"><span><span class="chip chip-rec">Consigliato</span></span><span>Da confermare</span><span>5 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via 25 Aprile 7/B, Seio · tel. 339 8255040 · circa 5 min in auto</li>
 <li><strong>Cucina:</strong> ricette di famiglia nelle cantine di casa Ziller, oltre 300 anni; tortel di patate con salumi e formaggi</li>
 <li><strong>Prezzo:</strong> menù tortel circa 20 € bevande escluse (approssimativo, una sola fonte)</li>
 <li><strong>Orari:</strong> durante la rassegna Tortèl&amp;Gropèl 2026 il tortel era servito venerdì, sabato e domenica a pranzo; orari normali non trovati</li>
 <li><strong>5–8 novembre:</strong> da confermare per telefono</li>
-<li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/it/poi/ristorante-al-dosarel" target="_blank" rel="noopener">https://www.visitvaldinon.it/it/poi/ristorante-al-dosarel</a> · <a href="https://www.visitvaldinon.it/it/tortel-gropel-la-cena-tipica-della-val-di-non" target="_blank" rel="noopener">https://www.visitvaldinon.it/it/tortel-gropel-la-cena-tipica-della-val-di-non</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Osteria Casa de Gentili</a>, Sanzeno</h4>
-<p><span class="chip chip-rec">Consigliato</span></p>
+<li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/it/poi/ristorante-al-dosarel" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/it/poi/ristorante-al-dosarel">Visit Val di Non</a> · <a href="https://www.visitvaldinon.it/it/tortel-gropel-la-cena-tipica-della-val-di-non" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/it/tortel-gropel-la-cena-tipica-della-val-di-non">Visit Val di Non (2)</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Casa+de+Gentili%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">Osteria Casa de Gentili</a>, Sanzeno</h4><span class="venue-meta"><span><span class="chip chip-rec">Consigliato</span></span><span>Da confermare</span><span>25 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> cortile di Casa de' Gentili, piazza di Sanzeno · cell. 348 4273235 · circa 25 min in auto, comoda il sabato di <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Santuario+di+San+Romedio%2C+Sanzeno" target="_blank" rel="noopener" title="Apri in Google Maps">San Romedio</a></li>
 <li><strong>Cucina:</strong> osteria ed enoteca; tortel di patate</li>
@@ -1674,77 +1700,70 @@ Il calendario di novembre non è confermato.</li>
 <li><strong>Valutazione:</strong> RestaurantGuru 4,8 su quasi 1.000 voti (data non indicata)</li>
 <li><strong>Orari:</strong> probabilmente solo venerdì, sabato e domenica</li>
 <li><strong>5–8 novembre:</strong> da confermare per telefono</li>
-<li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/it/poi/osteria-casa-de-gentili" target="_blank" rel="noopener">https://www.visitvaldinon.it/it/poi/osteria-casa-de-gentili</a> · <a href="https://restaurantguru.it/Sanzeno" target="_blank" rel="noopener">https://restaurantguru.it/Sanzeno</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alla+Pineta%2C+via+al+Santuario+17%2C+Tavon%2C+Predaia" target="_blank" rel="noopener" title="Apri in Google Maps">Alla Pineta</a>, Tavon di Predaia</h4>
-<p><span class="chip chip-opt">Facoltativo</span></p>
+<li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/it/poi/osteria-casa-de-gentili" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/it/poi/osteria-casa-de-gentili">Visit Val di Non</a> · <a href="https://restaurantguru.it/Sanzeno" target="_blank" rel="noopener" title="https://restaurantguru.it/Sanzeno">RestaurantGuru</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Alla+Pineta%2C+via+al+Santuario+17%2C+Tavon%2C+Predaia" target="_blank" rel="noopener" title="Apri in Google Maps">Alla Pineta</a>, Tavon di Predaia</h4><span class="venue-meta"><span><span class="chip chip-opt">Facoltativo</span></span><span>Da confermare</span><span>30 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via al Santuario 17, Tavon · tel. 0463 536866 · circa 30 min in auto, sulla strada per <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a></li>
 <li><strong>Cucina:</strong> marchio "Osteria Tipica Trentina" dal 2003, ricette trentine della famiglia Sicher</li>
 <li><strong>Valutazione:</strong> Gambero Rosso 81/100 (2025)</li>
 <li><strong>Orari e 5–8 novembre:</strong> non trovati, da confermare per telefono</li>
-<li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/en/poi/ristorante-alla-pineta" target="_blank" rel="noopener">https://www.visitvaldinon.it/en/poi/ristorante-alla-pineta</a> · <a href="https://www.gamberorosso.it/?p=82044" target="_blank" rel="noopener">https://www.gamberorosso.it/?p=82044</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Pizzeria+Centrale%2C+via+Nazionale+39%2C+Flavon" target="_blank" rel="noopener" title="Apri in Google Maps">Ristorante Centrale</a>, Flavon</h4>
-<p><span class="chip chip-opt">Facoltativo</span></p>
+<li><strong>Fonti:</strong> <a href="https://www.visitvaldinon.it/en/poi/ristorante-alla-pineta" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/en/poi/ristorante-alla-pineta">Visit Val di Non</a> · <a href="https://www.gamberorosso.it/?p=82044" target="_blank" rel="noopener" title="https://www.gamberorosso.it/?p=82044">Gambero Rosso</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Pizzeria+Centrale%2C+via+Nazionale+39%2C+Flavon" target="_blank" rel="noopener" title="Apri in Google Maps">Ristorante Centrale</a>, Flavon</h4><span class="venue-meta"><span><span class="chip chip-opt">Facoltativo</span></span><span>Probabile</span><span>40–45 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via Nazionale 39, Flavon · tel. 0461 652178 · circa 40–45 min in auto, vicino a <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Thun%2C+Vigo+di+Ton" target="_blank" rel="noopener" title="Apri in Google Maps">Castel Thun</a> (domenica)</li>
 <li><strong>Cucina:</strong> ristorante-pizzeria con tortel di patate (anche senza glutine), mortandela, orzotto, risotto al Teroldego, strudel</li>
 <li><strong>Orari:</strong> tutti i giorni, pranzo 12:00–15:00, cena 18:00–23:00 (sito ufficiale)</li>
 <li><strong>5–8 novembre:</strong> probabile · prenotare nel fine settimana</li>
-<li><strong>Fonti:</strong> <a href="https://www.centraleflavon.it" target="_blank" rel="noopener">https://www.centraleflavon.it</a> · <a href="https://www.visitvaldinon.it/en/poi/ristorante-pizzeria-centrale" target="_blank" rel="noopener">https://www.visitvaldinon.it/en/poi/ristorante-pizzeria-centrale</a></li>
-</ul>
+<li><strong>Fonti:</strong> <a href="https://www.centraleflavon.it" target="_blank" rel="noopener" title="https://www.centraleflavon.it">centraleflavon.it</a> · <a href="https://www.visitvaldinon.it/en/poi/ristorante-pizzeria-centrale" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/en/poi/ristorante-pizzeria-centrale">Visit Val di Non</a></li>
+</ul></details>
 <h4>Chiusi o da evitare in queste date</h4>
 <ul>
-<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Il+Falchetto%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">Il Falchetto</a>, Regole di Malosco:</strong> chiuso ogni anno dal 2 novembre al 3 dicembre (https://visitvaldinon.it/en/poi/ristorante-hotel-il-falchetto)</li>
-<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+La+Monteson%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">La Monteson</a>, Regole di Malosco:</strong> apre solo fino al 1° novembre (https://www.visitvaldinon.it/en/poi/ristorante-la-monteson)</li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Il+Falchetto%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">Il Falchetto</a>, Regole di Malosco:</strong> chiuso ogni anno dal 2 novembre al 3 dicembre · fonte: <a href="https://visitvaldinon.it/en/poi/ristorante-hotel-il-falchetto" target="_blank" rel="noopener" title="https://visitvaldinon.it/en/poi/ristorante-hotel-il-falchetto">Visit Val di Non</a></li>
+<li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+La+Monteson%2C+Regole+di+Malosco" target="_blank" rel="noopener" title="Apri in Google Maps">La Monteson</a>, Regole di Malosco:</strong> apre solo fino al 1° novembre · fonte: <a href="https://www.visitvaldinon.it/en/poi/ristorante-la-monteson" target="_blank" rel="noopener" title="https://www.visitvaldinon.it/en/poi/ristorante-la-monteson">Visit Val di Non</a></li>
 <li><strong><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Agritur+Mas+da+la+Val%2C+Ruffr%C3%A8-Mendola" target="_blank" rel="noopener" title="Apri in Google Maps">Agritur Mas da la Val</a>, Ruffrè:</strong> giorni di apertura del ristorante non pubblicati, solo dopo una telefonata (0463 870029)</li>
 </ul>
 <h3>Colazione tipica: i bar migliori</h3>
 <p>Nessun bar della zona documenta online una colazione "di malga" (yogurt, formaggi, confetture, mele della valle): per quella chiedete anche alla vostra struttura a Malosco.</p>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Peccato+di+Gola%2C+via+Cesare+Battisti+17%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Peccato di Gola</a>, Fondo</h4>
-<p><span class="chip chip-rec">Consigliato</span></p>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Peccato+di+Gola%2C+via+Cesare+Battisti+17%2C+Fondo" target="_blank" rel="noopener" title="Apri in Google Maps">Peccato di Gola</a>, Fondo</h4><span class="venue-meta"><span><span class="chip chip-rec">Consigliato</span></span><span>chiuso lunedì</span><span>5 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via Cesare Battisti 17, Fondo · tel. 0463 835169 · circa 5 min in auto</li>
 <li><strong>Cosa prendere:</strong> torte fatte in casa (lodata quella pere, cioccolato e noci), brioche, cappuccino</li>
 <li><strong>Valutazione:</strong> Google 4,6 (183 voti), TripAdvisor 4,5 (92), via RestaurantGuru, agosto 2026</li>
 <li><strong>Orari:</strong> martedì–sabato 8:00–13:00 e 15:00–19:00, domenica 8:00–12:15 · chiuso il lunedì</li>
-<li><strong>Fonte:</strong> <a href="https://restaurantguru.com/Peccato-Di-Gola-Fondo" target="_blank" rel="noopener">https://restaurantguru.com/Peccato-Di-Gola-Fondo</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+Pasticceria+F.lli+Borzaga%2C+piazza+Giovanni+Prati+30%2C+Cavareno" target="_blank" rel="noopener" title="Apri in Google Maps">F.lli Borzaga</a>, Cavareno</h4>
-<p><span class="chip chip-rec">Consigliato</span></p>
+<li><strong>Fonte:</strong> <a href="https://restaurantguru.com/Peccato-Di-Gola-Fondo" target="_blank" rel="noopener" title="https://restaurantguru.com/Peccato-Di-Gola-Fondo">RestaurantGuru</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+Pasticceria+F.lli+Borzaga%2C+piazza+Giovanni+Prati+30%2C+Cavareno" target="_blank" rel="noopener" title="Apri in Google Maps">F.lli Borzaga</a>, Cavareno</h4><span class="venue-meta"><span><span class="chip chip-rec">Consigliato</span></span><span>chiuso lunedì</span><span>8–10 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Piazza Giovanni Prati 30, Cavareno · tel. 0463 831355 · circa 8–10 min in auto</li>
 <li><strong>Cosa prendere:</strong> panificio-pasticceria con strudel, brioche e torta nera (da confermare sul posto)</li>
 <li><strong>Valutazione:</strong> Google 4,6 (549 voti), via RestaurantGuru, ottobre 2026</li>
 <li><strong>Orari:</strong> martedì–sabato 7:00–13:00 e 15:30–19:30, domenica 7:00–12:30 · chiuso il lunedì</li>
-<li><strong>Fonte:</strong> <a href="https://restaurantguru.com/FLli-Borzaga-Bakery-Pastry-Pizzas-Buns-Cavareno" target="_blank" rel="noopener">https://restaurantguru.com/FLli-Borzaga-Bakery-Pastry-Pizzas-Buns-Cavareno</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Pasticceria+Ramus%2C+via+Roma+10%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Pasticceria Ramus</a>, Cles</h4>
-<p><span class="chip chip-opt">Facoltativo</span></p>
+<li><strong>Fonte:</strong> <a href="https://restaurantguru.com/FLli-Borzaga-Bakery-Pastry-Pizzas-Buns-Cavareno" target="_blank" rel="noopener" title="https://restaurantguru.com/FLli-Borzaga-Bakery-Pastry-Pizzas-Buns-Cavareno">RestaurantGuru</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Pasticceria+Ramus%2C+via+Roma+10%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Pasticceria Ramus</a>, Cles</h4><span class="venue-meta"><span><span class="chip chip-opt">Facoltativo</span></span><span>30 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via Roma 10, Cles, dal 1962, con sala da tè · tel. 0463 421771 · circa 30 min, comoda il venerdì verso Tovel</li>
 <li><strong>Cosa prendere:</strong> lo strudel di mele, l'unico lodato in recensioni vere</li>
 <li><strong>Valutazione:</strong> Google 4,0 (398 voti), recensioni miste sul servizio</li>
 <li><strong>Orari:</strong> lunedì–sabato 7:30–12:30 e 15:00–19:00, domenica 7:30–12:30</li>
-<li><strong>Fonti:</strong> <a href="https://restaurantguru.com/Ramus-Cles" target="_blank" rel="noopener">https://restaurantguru.com/Ramus-Cles</a> · <a href="https://www.sluurpy.it/cles/ristorante/183813/pasticceria-ramus" target="_blank" rel="noopener">https://www.sluurpy.it/cles/ristorante/183813/pasticceria-ramus</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Goloserie%2C+via+Marconi+62%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Le Goloserie</a>, Cles</h4>
-<p><span class="chip chip-opt">Facoltativo</span></p>
+<li><strong>Fonti:</strong> <a href="https://restaurantguru.com/Ramus-Cles" target="_blank" rel="noopener" title="https://restaurantguru.com/Ramus-Cles">RestaurantGuru</a> · <a href="https://www.sluurpy.it/cles/ristorante/183813/pasticceria-ramus" target="_blank" rel="noopener" title="https://www.sluurpy.it/cles/ristorante/183813/pasticceria-ramus">Sluurpy</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Goloserie%2C+via+Marconi+62%2C+Cles" target="_blank" rel="noopener" title="Apri in Google Maps">Le Goloserie</a>, Cles</h4><span class="venue-meta"><span><span class="chip chip-opt">Facoltativo</span></span><span>Aperto nei giorni del viaggio</span><span>30 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via G. Marconi 62, Cles · tel. 0463 421179 · circa 30 min in auto</li>
 <li><strong>Cosa prendere:</strong> croissant a lievito madre e caffè di specialità: pasticceria artigianale moderna più che tipica</li>
 <li><strong>Orari ufficiali (19/09/2026–31/01/2027):</strong> lunedì–venerdì 6:30–19:30, sabato 6:30–13:00, domenica 6:30–12:00 · aperto nei giorni del viaggio</li>
-<li><strong>Fonte:</strong> <a href="https://www.outdooractive.com/en/gastro/val-di-non/pasticceria-le-goloserie/807679824/" target="_blank" rel="noopener">https://www.outdooractive.com/en/gastro/val-di-non/pasticceria-le-goloserie/807679824/</a></li>
-</ul>
-<h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Dal+Gran+al+Pan%2C+via+Cesare+Battisti+15%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Dal Gran al Pan</a>, Sarnonico</h4>
-<p><span class="chip chip-opt">Facoltativo</span></p>
+<li><strong>Fonte:</strong> <a href="https://www.outdooractive.com/en/gastro/val-di-non/pasticceria-le-goloserie/807679824/" target="_blank" rel="noopener" title="https://www.outdooractive.com/en/gastro/val-di-non/pasticceria-le-goloserie/807679824/">Outdooractive (APT)</a></li>
+</ul></details>
+<details class="venue"><summary><h4><a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Dal+Gran+al+Pan%2C+via+Cesare+Battisti+15%2C+Sarnonico" target="_blank" rel="noopener" title="Apri in Google Maps">Dal Gran al Pan</a>, Sarnonico</h4><span class="venue-meta"><span><span class="chip chip-opt">Facoltativo</span></span><span>chiuso domenica</span><span>5 min</span></span></summary>
 <ul>
 <li><strong>Dove:</strong> Via Cesare Battisti 15, Sarnonico · tel. 379 195 8405 · circa 5 min in auto</li>
 <li><strong>Cosa prendere:</strong> forno da asporto, senza bar: pane e dolci con farine proprie macinate nel loro mulino, compreso il grano saraceno</li>
 <li><strong>Orari ufficiali (02/10/2026–31/03/2027):</strong> lunedì–sabato 7:00–12:00, venerdì e sabato anche 16:00–19:00 · domenica 8 novembre probabilmente chiuso</li>
-<li><strong>Fonte:</strong> <a href="https://www.outdooractive.com/en/gastro/val-di-non/panificio-pasticceria-dal-gran-al-pan/807679009/" target="_blank" rel="noopener">https://www.outdooractive.com/en/gastro/val-di-non/panificio-pasticceria-dal-gran-al-pan/807679009/</a></li>
-</ul>
+<li><strong>Fonte:</strong> <a href="https://www.outdooractive.com/en/gastro/val-di-non/panificio-pasticceria-dal-gran-al-pan/807679009/" target="_blank" rel="noopener" title="https://www.outdooractive.com/en/gastro/val-di-non/panificio-pasticceria-dal-gran-al-pan/807679009/">Outdooractive (APT)</a></li>
+</ul></details>
 </section>
 
 <section id="promemoria" class="sec sec-promemoria">
@@ -2095,8 +2114,39 @@ Il calendario di novembre non è confermato.</li>
 <p>Guida generata il 2 novembre 2026 dai file Markdown della cartella TRAVEL/malosco. Questa versione non pubblica le sezioni Trasporti, Sicurezza e meteo e Budget. Foto da Wikimedia Commons (crediti in fondo alla pagina), mappa © OpenStreetMap. I dati del piano sono anche nel blocco <code>trip-data</code> in testa alla pagina.</p>
 </footer>
 
+<script>
+(function () {
+  // Nei giorni del viaggio compare "Oggi", che porta alla giornata in corso.
+  var d = new Date();
+  var today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  var head = document.querySelector('h3.day-head[data-date="' + today + '"]');
+  var oggi = document.getElementById('nav-oggi');
+  if (head && oggi) { oggi.href = '#' + head.id; oggi.hidden = false; }
+
+  // Il menu evidenzia la sezione che si sta leggendo e la tiene visibile.
+  var nav = document.querySelector('.topbar nav');
+  var links = Array.prototype.filter.call(nav.querySelectorAll('a'), function (a) { return a !== oggi; });
+  var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  var current = null, ticking = false;
+  function update() {
+    ticking = false;
+    var idx = 0;
+    sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= 90) idx = i; });
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) idx = sections.length - 1;
+    var link = links[idx];
+    if (link === current) return;
+    if (current) current.removeAttribute('aria-current');
+    link.setAttribute('aria-current', 'true');
+    current = link;
+    var left = link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2;
+    nav.scrollTo({ left: Math.max(0, left), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+})();
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script id="map-places" type="application/json">{"base": {"name": "Malosco (alloggio)", "lat": 46.433333, "lng": 11.15, "source": "it.wikipedia.org, Malosco (Q295070)"}, "days": [{"day": 1, "label": "Gio 5", "endAtBase": true, "stops": [{"id": "lago-smeraldo", "name": "Lago Smeraldo e Burrone di Fondo", "lat": 46.444678, "lng": 11.143531, "source": "Wikidata Q33800300"}, {"id": "mendola", "name": "Passo della Mendola / belvedere del Penegal", "lat": 46.438226, "lng": 11.2165, "source": "it.wikipedia.org, Penegal (Q494935)"}]}, {"day": 2, "label": "Ven 6", "endAtBase": true, "stops": [{"id": "tovel", "name": "Lago di Tovel", "lat": 46.26155, "lng": 10.947997, "source": "it.wikipedia.org, Lago di Tovel (Q1432181)"}, {"id": "santa-giustina", "name": "Cles e Lago di Santa Giustina", "lat": 46.373122, "lng": 11.049242, "source": "Wikidata Q2222728"}, {"id": "nerina", "name": "Cena da Nerina, Malgolo di Romeno", "lat": 46.3801, "lng": 11.09405, "source": "Wikidata Q3843909 (posizione del paese di Malgolo)"}]}, {"day": 3, "label": "Sab 7", "endAtBase": true, "stops": [{"id": "museo-retico", "name": "Sanzeno, Museo Retico (partenza del sentiero)", "lat": 46.370221, "lng": 11.080696, "source": "OpenStreetMap, Museo Retico, via Rezia 87"}, {"id": "san-romedio", "name": "Santuario di San Romedio", "lat": 46.368851, "lng": 11.106544, "source": "Wikidata Q1283479"}, {"id": "castel-valer", "name": "Castel Valer, Tassullo", "lat": 46.330546, "lng": 11.047371, "source": "Wikidata Q17624071"}]}, {"day": 4, "label": "Dom 8", "endAtBase": false, "stops": [{"id": "rio-sass", "name": "Canyon Rio Sass, Fondo", "lat": 46.438854, "lng": 11.137522, "source": "OpenStreetMap, Canyon Rio Sass"}, {"id": "castel-thun", "name": "Castel Thun, Vigo di Ton", "lat": 46.273686, "lng": 11.090311, "source": "it.wikipedia.org, Castel Thun (Q1048623)"}, {"id": "a22", "name": "Casello A22 San Michele all'Adige, rientro", "lat": 46.1938, "lng": 11.1346, "source": "it.wikipedia.org, San Michele all'Adige (posizione del paese)"}]}], "photos": {"lago-smeraldo": {"match": "Lago Smeraldo e Burrone di Fondo", "place": "Lago Smeraldo, Fondo", "query": "Lago Smeraldo Fondo"}, "mendola": {"match": "Tramonto al Passo della Mendola", "place": "Passo della Mendola", "query": "Passo della Mendola Penegal"}, "tovel": {"match": "Lago di Tovel —", "place": "Lago di Tovel", "query": "Lago di Tovel"}, "santa-giustina": {"match": "Cles e Lago di Santa Giustina", "place": "Lago di Santa Giustina", "query": "Lago di Santa Giustina"}, "san-romedio": {"match": "Santuario di San Romedio a piedi", "place": "Santuario di San Romedio", "query": "Santuario di San Romedio"}, "castel-valer": {"match": "Castel Valer, Tassullo", "place": "Castel Valer", "query": "Castel Valer Tassullo"}, "rio-sass": {"match": "Canyon Rio Sass, Fondo", "place": "Canyon Rio Sass", "query": "Canyon Rio Sass Fondo"}, "castel-thun": {"match": "Castel Thun, Vigo di Ton", "place": "Castel Thun", "query": "Castel Thun"}}}</script>
+<script id="map-places" type="application/json">{"base": {"name": "Malosco (alloggio)", "lat": 46.433333, "lng": 11.15, "source": "it.wikipedia.org, Malosco (Q295070)"}, "days": [{"day": 1, "label": "Gio 5", "endAtBase": true, "stops": [{"id": "lago-smeraldo", "name": "Lago Smeraldo e Burrone di Fondo", "lat": 46.444678, "lng": 11.143531, "source": "Wikidata Q33800300"}, {"id": "mendola", "name": "Passo della Mendola / belvedere del Penegal", "lat": 46.438226, "lng": 11.2165, "source": "it.wikipedia.org, Penegal (Q494935)"}]}, {"day": 2, "label": "Ven 6", "endAtBase": true, "stops": [{"id": "tovel", "name": "Lago di Tovel", "lat": 46.26155, "lng": 10.947997, "source": "it.wikipedia.org, Lago di Tovel (Q1432181)"}, {"id": "santa-giustina", "name": "Cles e Lago di Santa Giustina", "lat": 46.373122, "lng": 11.049242, "source": "Wikidata Q2222728"}, {"id": "nerina", "name": "Cena da Nerina, Malgolo di Romeno", "lat": 46.3801, "lng": 11.09405, "source": "Wikidata Q3843909 (posizione del paese di Malgolo)", "query": "Albergo Ristorante Nerina, via De Gasperi 31, Romeno"}]}, {"day": 3, "label": "Sab 7", "endAtBase": true, "stops": [{"id": "museo-retico", "name": "Sanzeno, Museo Retico (partenza del sentiero)", "lat": 46.370221, "lng": 11.080696, "source": "OpenStreetMap, Museo Retico, via Rezia 87"}, {"id": "san-romedio", "name": "Santuario di San Romedio", "lat": 46.368851, "lng": 11.106544, "source": "Wikidata Q1283479"}, {"id": "castel-valer", "name": "Castel Valer, Tassullo", "lat": 46.330546, "lng": 11.047371, "source": "Wikidata Q17624071"}]}, {"day": 4, "label": "Dom 8", "endAtBase": false, "stops": [{"id": "rio-sass", "name": "Canyon Rio Sass, Fondo", "lat": 46.438854, "lng": 11.137522, "source": "OpenStreetMap, Canyon Rio Sass"}, {"id": "castel-thun", "name": "Castel Thun, Vigo di Ton", "lat": 46.273686, "lng": 11.090311, "source": "it.wikipedia.org, Castel Thun (Q1048623)"}, {"id": "a22", "name": "Casello A22 San Michele all'Adige, rientro", "lat": 46.1938, "lng": 11.1346, "source": "it.wikipedia.org, San Michele all'Adige (posizione del paese)", "query": "Casello A22 San Michele all'Adige"}]}], "photos": {"lago-smeraldo": {"match": "Lago Smeraldo e Burrone di Fondo", "place": "Lago Smeraldo, Fondo", "query": "Lago Smeraldo Fondo"}, "mendola": {"match": "Tramonto al Passo della Mendola", "place": "Passo della Mendola", "query": "Passo della Mendola Penegal"}, "tovel": {"match": "Lago di Tovel —", "place": "Lago di Tovel", "query": "Lago di Tovel"}, "santa-giustina": {"match": "Cles e Lago di Santa Giustina", "place": "Lago di Santa Giustina", "query": "Lago di Santa Giustina"}, "san-romedio": {"match": "Santuario di San Romedio a piedi", "place": "Santuario di San Romedio", "query": "Santuario di San Romedio"}, "castel-valer": {"match": "Castel Valer, Tassullo", "place": "Castel Valer", "query": "Castel Valer Tassullo"}, "rio-sass": {"match": "Canyon Rio Sass, Fondo", "place": "Canyon Rio Sass", "query": "Canyon Rio Sass Fondo"}, "castel-thun": {"match": "Castel Thun, Vigo di Ton", "place": "Castel Thun", "query": "Castel Thun"}}}</script>
 <script>
 (function () {
   var el = document.getElementById('map');
