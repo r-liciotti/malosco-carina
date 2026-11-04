@@ -1223,6 +1223,19 @@ footer {
   figure.photo img { max-height: 16rem; }
 }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+/* Offerte Guest Card. */
+.offer-list { display: grid; gap: 10px; margin: 0.8em 0 1.2em; padding: 0; list-style: none; }
+.offer-list > li { max-width: none; margin: 0; }
+.offer { border: 1px solid var(--line); border-left: 4px solid var(--lake); border-radius: 8px; background: var(--surface); padding: 12px 14px; }
+.offer.warn { border-left-color: var(--larch); }
+.offer h4 { margin: 0 0 4px; padding: 0; border: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.offer .deal { font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--lake); border: 1px solid currentColor; border-radius: 4px; padding: 2px 8px; line-height: 1.4; }
+.offer.warn .deal { color: var(--larch); }
+.offer ul { margin: 0.3em 0 0; }
+.offer .src { margin: 0.4em 0 0; font-size: 0.85rem; color: var(--muted); }
+.sec-offerte h4 { margin-top: 0; }
+.sec-offerte h3 + p { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -1235,6 +1248,7 @@ footer {
 <a href="#itinerario">Itinerario</a>
 <a href="#bolzano">Bolzano</a>
 <a href="#trento">Trento</a>
+<a href="#offerte">Offerte</a>
 <a href="#cucina">Cucina</a>
 <a href="#dove-mangiare">Dove mangiare</a>
 <a href="#promemoria">Promemoria</a>
@@ -1752,6 +1766,61 @@ footer {
 <li><strong>Centro storico:</strong> è zona a traffico limitato con telecamere. Lasciate l'auto all'Autosilo.</li>
 <li><strong>Concerto:</strong> domenica sera c'è un concerto al Centro Santa Chiara, ma vi riguarda solo se restate in città.</li>
 </ul>
+</section>
+
+<section id="offerte" class="sec sec-offerte">
+<h2>Offerte con la Trentino Guest Card</h2>
+<p>Le offerte più interessanti per il tuo itinerario. Ricordate di chiedere la card all’hotel e di dire che la avete al momento della prenotazione o in biglietteria.</p>
+<h3>Le offerte sulle tappe già previste</h3>
+<ul class="offer-list">
+<li><article class="offer"><h4><span>1. Canyon Rio Sass</span><span class="deal">Tariffa scontata</span></h4><ul><li>Domenica 8 novembre.</li><li>È già previsto nella tua guida.</li><li>La Guest Card offre una tariffa ridotta per la visita guidata.</li></ul><p class="src">Fonte: sezione Natura.</p></article></li>
+<li><article class="offer"><h4><span>2. Castel Valer</span><span class="deal">Tariffa scontata</span></h4><ul><li>Sabato 7 novembre.</li><li>È già previsto nella tua guida.</li><li>La Guest Card prevede uno sconto sulla visita.</li></ul><p class="src">Fonte: sezione Castelli e Fortezze.</p></article></li>
+<li><article class="offer"><h4><span>3. Funicolare della Mendola</span><span class="deal">20% di sconto</span></h4><ul><li>Interessante per giovedì 5 novembre.</li><li>La guida prevede già il belvedere della Mendola al tramonto.</li><li>Potrebbe essere un’alternativa interessante per salire senza utilizzare l’auto.</li></ul><p class="src">Fonte: sezione Altri servizi.</p></article></li>
+<li><article class="offer"><h4><span>4. Castel Thun</span><span class="deal">Incluso nell’elenco Guest Card</span></h4><ul><li>Domenica 8 novembre.</li><li>È già presente nel tuo itinerario.</li><li>Compare tra le attrazioni convenzionate, ma la pagina non specifica uno sconto: va verificata la modalità di accesso (vedi sotto: la scheda specifica indica l’ingresso gratuito).</li></ul></article></li>
+</ul>
+<h3>Quanto risparmi concretamente</h3>
+<p>Considerando che viaggiate in due, queste sono le riduzioni sulle tre attrazioni già previste:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Attrazione</th><th>Prezzo normale</th><th>Con Guest Card</th></tr></thead>
+<tbody>
+<tr><td>Canyon Rio Sass</td><td>12 €</td><td>9,60 €</td></tr>
+<tr><td>Castel Valer</td><td>15 €</td><td>12 €</td></tr>
+<tr><td>Castel Thun</td><td>8 €</td><td>Gratis</td></tr>
+<tr><td><strong>Totale a persona</strong></td><td><strong>35 €</strong></td><td><strong>21,60 €</strong></td></tr>
+</tbody></table></div>
+<p><strong>Risparmio totale: 26,80 € in due.</strong></p>
+<blockquote><p>Per Castel Thun è stata verificata anche la scheda specifica della Guest Card: è previsto effettivamente un ingresso gratuito per ogni possessore.</p></blockquote>
+<h3>Altre offerte nei dintorni</h3>
+<p>Non sono tutte tappe già programmate, ma potrebbero essere utili per qualche piccola deviazione.</p>
+<ul class="offer-list">
+<li><article class="offer warn"><h4><span>5. Museo Retico</span><span class="deal">Ingresso gratuito</span></h4><ul><li>Si trova proprio a Sanzeno, dove inizierete il percorso verso San Romedio.</li><li>Ingresso normalmente 3,50–4 €.</li><li><strong>Attenzione:</strong> la scheda ufficiale indica apertura fino al 31 ottobre 2026. Per sabato 7 novembre non risulta quindi un’apertura confermata.</li></ul></article></li>
+<li><article class="offer warn"><h4><span>6. MondoMelinda</span><span class="deal">Degustazione + 10% acquisti</span></h4><ul><li>È già indicato nella guida come alternativa per venerdì pomeriggio.</li><li>Degustazione di un prodotto e sconto del 10% sugli acquisti.</li><li>Le visite alle celle ipogee richiedono prenotazione.</li><li><strong>Attenzione:</strong> la scheda Guest Card riporta un calendario fino ad agosto: occorre verificare che l’offerta sia attiva a novembre.</li></ul></article></li>
+<li><article class="offer warn"><h4><span>7. Caseificio Sociale di Coredo</span><span class="deal">Degustazione + 10% acquisti</span></h4><ul><li>Produzione di Trentingrana, Nostrano Coredo e formaggi locali.</li><li>Visite guidate su prenotazione.</li><li>Potrebbe essere interessante se passate da Coredo.</li><li><strong>Attenzione:</strong> la scheda ufficiale riporta orari fino a maggio 2026: apertura a novembre da verificare.</li></ul></article></li>
+<li><article class="offer warn"><h4><span>8. Macelleria Fratelli Corrà</span><span class="deal">Degustazione + 10% acquisti</span></h4><ul><li>Produce mortandela affumicata, speck e salumi tipici.</li><li>Interessante se volete acquistare qualche prodotto gastronomico da portare a casa.</li><li><strong>Attenzione:</strong> gli orari riportati nella scheda sono limitati al periodo gennaio-maggio.</li></ul></article></li>
+</ul>
+<h3>Se scegliete l’alternativa di Trento</h3>
+<p>Qui c’è un’altra offerta decisamente interessante.</p>
+<ul class="offer-list">
+<li><article class="offer"><h4><span>★. Castello del Buonconsiglio</span><span class="deal">30% di sconto</span></h4><ul><li>Prezzo intero: 10 €. Con Guest Card: circa 7 €.</li><li>Risparmio: 6 € in due.</li><li>Domenica 8 novembre è aperto dalle 9:30 alle 17:00.</li></ul></article></li>
+</ul>
+<h3>Trasporti: cosa puoi sfruttare</h3>
+<p>La Guest Card comprende:</p>
+<ul>
+<li>autobus urbani ed extraurbani di Trentino Trasporti;</li>
+<li>treni regionali sulle tratte provinciali;</li>
+<li>ferrovia Trento-Malè;</li>
+<li>funivia di Sardagna a Trento.</li>
+</ul>
+<p>Per il vostro viaggio, però, considerando che vi sposterete principalmente in automobile, non c’è un grande vantaggio pratico nell’utilizzo dei trasporti pubblici.</p>
+<h3>Le priorità</h3>
+<ol>
+<li><strong>Canyon Rio Sass:</strong> assolutamente da sfruttare, prenotando la visita con lo sconto del 20%.</li>
+<li><strong>Castel Valer:</strong> prenotazione per sabato alle 15:00, comunicando che avete la Guest Card.</li>
+<li><strong>Castel Thun:</strong> non dimenticate di utilizzare l’ingresso gratuito domenica.</li>
+<li><strong>Funicolare della Mendola:</strong> interessante solo se volete modificare la salita al passo; attenzione, la scheda indica che l’impianto termina il servizio stagionale l’8 novembre.</li>
+<li><strong>MondoMelinda:</strong> buona alternativa per venerdì, ma prima verificherei l’effettiva validità della convenzione.</li>
+</ol>
+<p class="map-note">Offerte raccolte da <a href="https://card.visittrentino.it" target="_blank" rel="noopener">card.visittrentino.it</a> e dalla sezione Guest Card di Visit Val di Non. Condizioni, sconti e date di apertura possono cambiare: verificate prima di partire.</p>
 </section>
 
 <section id="cucina" class="sec sec-cucina">
